@@ -16,7 +16,7 @@ assignees: ''
 ### How should this be tested? 
 *For example: Survey against requirements*  
 
-## How should this be evaluated? 
+## How should this be evaluated? (Acceptance Criteria) 
 *For example, Evaluate survey results*
 
 **~MoSCoW Category**

@@ -16,7 +16,7 @@ assignees: ''
 ### How should this be tested? 
 *For example: Testing of each button and function, unit testing*  
 
-## How should this be evaluated? 
+## How should this be evaluated? (Acceptance Criteria) 
 *For example, User Acceptance Testing or Interview*
 
 **~MoSCoW Category**
