@@ -1,0 +1,14 @@
+:root {
+  --maastricht_blue: #001B3A;
+  --az_purple: #8A0051;
+  --az_gold: #EFAB00;
+  --off_white: #d9d9d9
+}
+
+body{
+    background-color: linear-gradient(to bottom, var(--az_purple), var(--maastricht_blue))
+}
+
+h1{
+    color:#EFAB00
+}
