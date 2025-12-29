@@ -2,13 +2,80 @@
   --maastricht_blue: #001B3A;
   --az_purple: #8A0051;
   --az_gold: #EFAB00;
-  --off_white: #d9d9d9
+  --off_white: #d9d9d9;
 }
 
 body{
-    background-color: linear-gradient(to bottom, var(--az_purple), var(--maastricht_blue))
+  height: 100vh;
+  background: linear-gradient(to bottom, var(--az_purple), var(--maastricht_blue));
 }
 
 h1{
-    color:#EFAB00
+    color:white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 100px;
+    font-weight: lighter;
+}
+
+h2{ 
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:30px; 
+  font-weight: lighter;
+}
+
+#title_header{ 
+  text-align: center;
+}
+
+#ai_select{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+#manufacture_select{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+#manufacture_nav_btn{
+  background-image: url("https://raw.githubusercontent.com/UL2663/AE1-Software-Engineering/main/undraw_factory_4d61.png");
+}
+
+#ai_nav_btn{
+   background-image: url("https://raw.githubusercontent.com/UL2663/AE1-Software-Engineering/main/undraw_artificial-intelligence_43qa (1).svg");
+}
+
+.nav_btn{
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  border: none; 
+  outline: none;
+  transition: 0.5s;
+}
+
+.nav_btn:hover{
+  opacity:0.6;
+  cursor: grab;
+}
+
+.grid_container{
+  display: grid;
+  width: 50vw;
+  min-width: 320px;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 150px 150px;
+  gap: 1rem;
+  padding: 50px;
+}
+
+.grid_container > div {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 20px;
 }
