@@ -2,9 +2,11 @@
 from flask import Flask, jsonify
 import requests 
 import os
+from datetime import datetime, timedelta
 
 app = Flask(__name__)
 api_key = os.getenv("NEWS_API_KEY") ##pulls from server settings 
+last_day = (datetime.bstnow() - timedelta(hours=24).strftime("%Y-%m-%dT%H:%M:%SZ"))
 
 @app.route("/api/news")
 def news():
@@ -12,6 +14,7 @@ def news():
     params = {
         "q":"artificial intelligce",
         "lang" : "en",
+        "from": last_day,
         "max": 5000,
         "token": api_key
     }
