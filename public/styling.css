@@ -39,11 +39,11 @@ h2{
 }
 
 #manufacture_nav_btn{
-  background-image: url("https://raw.githubusercontent.com/UL2663/AE1-Software-Engineering/main/undraw_factory_4d61.png");
+  background-image: url("/undraw_factory_4d61.png");
 }
 
 #ai_nav_btn{
-   background-image: url("https://raw.githubusercontent.com/UL2663/AE1-Software-Engineering/main/undraw_artificial-intelligence_43qa (1).svg");
+   background-image: url("/undraw_artificial-intelligence_43qa (1).svg");
 }
 
 .nav_btn{
