@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 
 app = Flask(__name__)
 api_key = os.getenv("NEWS_API_KEY") ##pulls from server settings 
-last_day = (datetime.bstnow() - timedelta(hours=24).strftime("%Y-%m-%dT%H:%M:%SZ"))
+last_day = (datetime.now() - timedelta(hours=24)).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 @app.route("/api/AInews")
 def AInews():
@@ -15,7 +15,7 @@ def AInews():
         "q":"artificial intelligence",
         "lang" : "en",
         "from": last_day,
-        "max": 5000,
+        "max": 10,  #freetier minimum impacts total - RISK  
         "token": api_key
     }
     response = requests.get(url, params=params)
@@ -29,7 +29,7 @@ def ManAIPharmanews():
         "q":"(artificial intelligence) AND Manufacturing OR Pharmaceuticals", # OR has higher precedence so should work, ref docs 
         "lang" : "en",
         "from": last_day,
-        "max": 5000,
+        "max": 10,
         "token": api_key
     }
     response = requests.get(url, params=params)
