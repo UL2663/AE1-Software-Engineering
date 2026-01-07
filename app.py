@@ -9,7 +9,7 @@ api_key = os.getenv("NEWS_API_KEY") ##pulls from server settings
 last_day = (datetime.bstnow() - timedelta(hours=24).strftime("%Y-%m-%dT%H:%M:%SZ"))
 
 @app.route("/api/AInews")
-def news():
+def AInews():
     url = "https://gnews.io/api/v4/search"
     params = {
         "q":"artificial intelligence",
@@ -23,7 +23,7 @@ def news():
 
 
 @app.route("/api/ManAIPharmanews")
-def news():
+def ManAIPharmanews():
     url = "https://gnews.io/api/v4/search"
     params = {
         "q":"(artificial intelligence) AND Manufacturing OR Pharmaceuticals", # OR has higher precedence so should work, ref docs 
