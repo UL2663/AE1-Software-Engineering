@@ -1,6 +1,6 @@
 function getManAI()
 {console.log("call Man AI");
-    fetch("https://ae1-software-engineering.onrender.com/api/ManAIPharmanews")
+    fetch("/api/ManAIPharmanews")
     .then(res =>{             //adding error checking 
      console.log("status = ", res.status)
     return res.json();
@@ -15,7 +15,7 @@ function getManAI()
 
 function getAI() 
     {console.log("call AI");
-    fetch("https://ae1-software-engineering.onrender.com/api/AInews")    
+    fetch("/api/AInews")    
     .then(res =>{             //adding error checking 
      console.log("status = ", res.status)
     return res.json();
