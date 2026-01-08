@@ -30,7 +30,7 @@ app.get('/api/AInews', async (req, res) => {
     }
 });
 
-app.get('/api/ManPharmaAInews', async (req, res) => { 
+app.get('/api/ManAIPharmanews', async (req, res) => { 
     try {
        const params = new URLSearchParams({
         q: "(artificial intelligence) AND Manufacturing OR Pharmaceuticals", // OR has higher precedence so should work, ref docs 
