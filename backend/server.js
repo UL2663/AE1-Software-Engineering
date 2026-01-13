@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, '..','/public')));
 app.get('/api/AInews', async (req, res) => { 
     try {
        const params = new URLSearchParams({
-        q: 'artificial intelligence',
+        q: 'q = "AI OR \"artificial intelligence\" OR \"machine learning\"',
         lang: 'en',
         from: iso_last_day,
         max: '10',
@@ -33,7 +33,7 @@ app.get('/api/AInews', async (req, res) => {
 app.get('/api/ManAIPharmanews', async (req, res) => { 
     try {
        const params = new URLSearchParams({
-        q: "(artificial intelligence) AND Manufacturing OR Pharmaceuticals", // OR has higher precedence so should work, ref docs 
+        q: "(artificial intelligence OR AI) AND Manufacturing OR Pharmaceuticals", // OR has higher precedence so should work, ref docs 
         lang: 'en',
         from: iso_last_day,
         max: '10',
