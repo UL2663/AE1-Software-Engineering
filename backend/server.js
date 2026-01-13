@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, '..','/public')));
 app.get('/api/AIgnews', async (req, res) => { 
     try {
        const params = new URLSearchParams({
-        q: 'q = "AI OR \"artificial intelligence\" OR \"machine learning\"',
+        q: 'AI OR artificial intelligence OR machine learning',
         lang: 'en',
         from: iso_last_day,
         max: '10',
@@ -51,10 +51,11 @@ app.get('/api/ManAIPharmagnews', async (req, res) => {
         res.status(500).json({error: "There is an issue with AI Pharma News"})
     }
 });
+
 app.get('/api/WeekAIgnews', async (req, res) => { 
     try {
        const params = new URLSearchParams({
-        q: 'q = "AI OR \"artificial intelligence\" OR \"machine learning\"',
+        q: 'AI OR artificial intelligence OR machine learning',
         lang: 'en',
         from: iso_last_week,
         max: '10',
@@ -90,6 +91,7 @@ app.get('/api/WeekManAIPharmagnews', async (req, res) => {
         res.status(500).json({error: "There is an issue with AI Pharma News"})
     }
 });
+
 app.get(/\/$|\/Mainpage(\.html)?/, (req,res) => {  // regex to handle variations of mainpage 
     res.sendFile(path.join(__dirname, '..', 'Mainpage.html'));
 });
