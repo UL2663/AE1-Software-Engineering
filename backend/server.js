@@ -98,6 +98,7 @@ app.get('/api/ManAIPharmaGuardian', async (req, res) => {
     try {
        const params = new URLSearchParams({
         q: '("artificial intelligence" OR AI) AND (Manufacturing OR Pharmaceuticals)', 
+        'page-size':'50',
         'from-date': split_day,
         'show-fields':'headline',
         'api-key': process.env.GUARDIAN_API_KEY,
@@ -118,6 +119,7 @@ app.get('/api/AIGuardian', async (req, res) => {
     try {
        const params = new URLSearchParams({
         q: '"artificial intelligence" OR AI or "machine learning"', 
+        'page-size':'50',
         'from-date': split_day,
         'show-fields':'headline',
         'api-key': process.env.GUARDIAN_API_KEY,
@@ -137,6 +139,7 @@ app.get('/api/ManAIPharmaGuardianweek', async (req, res) => {
     try {
        const params = new URLSearchParams({
         q: '("artificial intelligence" OR AI) AND (Manufacturing OR Pharmaceuticals)', 
+        'page-size':'50',
         'from-date': split_week,
         'show-fields':'headline',
         'api-key': process.env.GUARDIAN_API_KEY,
@@ -157,6 +160,7 @@ app.get('/api/AIGuardianWeek', async (req, res) => {
     try {
        const params = new URLSearchParams({
         q: '"artificial intelligence" OR AI or "machine learning"', 
+        'page-size':'50',
         'from-date': split_week,
         'show-fields':'headline',
         'api-key': process.env.GUARDIAN_API_KEY,

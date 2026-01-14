@@ -131,10 +131,12 @@ function getAI(){
     getAI_GN();
     getAIweek_GN();
     getAI_Guardian();
+    getAI_GuardianWeek();
 };
 
 function getManAI(){
     getManAI_GN();
     getManAIWeek_GN();
     getManAI_Guardian();
+    getAI_GuardianWeek();
 }
