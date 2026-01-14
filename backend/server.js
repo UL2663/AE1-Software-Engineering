@@ -97,7 +97,7 @@ app.get('/api/WeekManAIPharmagnews', async (req, res) => {
 app.get('/api/ManAIPharmaGuardian', async (req, res) => { 
     try {
        const params = new URLSearchParams({
-        q: '("artificial intelligence" OR AI) AND (Manufacturing OR Pharmaceuticals)', 
+        q: '(title:"artificial intelligence" OR title:AI) AND (title:Manufacturing OR title:Pharmaceuticals)', 
         'page-size':'50',
         'from-date': split_day,
         'show-fields':'headline',
@@ -118,7 +118,7 @@ app.get('/api/ManAIPharmaGuardian', async (req, res) => {
 app.get('/api/AIGuardian', async (req, res) => { 
     try {
        const params = new URLSearchParams({
-        q: '"artificial intelligence" OR AI or "machine learning"', 
+        q: 'title:"artificial intelligence" OR title:AI or title:"machine learning"', 
         'page-size':'50',
         'from-date': split_day,
         'show-fields':'headline',
@@ -138,7 +138,7 @@ app.get('/api/AIGuardian', async (req, res) => {
 app.get('/api/ManAIPharmaGuardianweek', async (req, res) => { 
     try {
        const params = new URLSearchParams({
-        q: '("artificial intelligence" OR AI) AND (Manufacturing OR Pharmaceuticals)', 
+        q: '(title:"artificial intelligence" OR title:AI) AND (title:Manufacturing OR title:Pharmaceuticals)', 
         'page-size':'50',
         'from-date': split_week,
         'show-fields':'headline',
@@ -159,7 +159,7 @@ app.get('/api/ManAIPharmaGuardianweek', async (req, res) => {
 app.get('/api/AIGuardianWeek', async (req, res) => { 
     try {
        const params = new URLSearchParams({
-        q: '"artificial intelligence" OR AI or "machine learning"', 
+        q: 'title:"artificial intelligence" OR title:AI OR title:"machine learning"', 
         'page-size':'50',
         'from-date': split_week,
         'show-fields':'headline',
