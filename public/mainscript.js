@@ -1,4 +1,5 @@
-//DAILY CALLS
+//DAILY CALLS 
+//gnews
 function getManAI_GN()
     {console.log("call Man AI");
     fetch("/api/ManAIPharmagnews")
@@ -28,40 +29,7 @@ function getAI_GN()
           console.error("fetch error:", err)
      })
     }
-
-//WEEKLY CALLS
-function getAIweek_GN() 
-    {console.log("call AI");
-    fetch("/api/WeekAIgnews")    
-    .then(res =>{             //adding error checking 
-     console.log("status = ", res.status)
-    return res.json();
-})
-    .then(data => { 
-         console.log(data);
-     })
-     .catch(err => {
-          console.error("fetch error:", err)
-     })
-    }
-
-function getManAIWeek_GN()
-{console.log("call Man AI");
-    fetch("/api/WeekManAIPharmagnews")
-    .then(res =>{             //adding error checking 
-     console.log("status = ", res.status)
-    return res.json();
-})
-    .then(data => { 
-         console.log(data);
-     })
-     .catch(err => {
-          console.error("fetch error:", err)
-     })
-    }
-
-    //GUARDIAN 
-
+//guardian 
 function getAI_Guardian(){
     {console.log("call AI Guardian");
         fetch("/api/AIGuardian")
@@ -93,6 +61,71 @@ function getManAI_Guardian(){
      })
     }
 }
+//WEEKLY CALLS
+//gnews
+function getAIweek_GN() 
+    {console.log("call AI");
+    fetch("/api/WeekAIgnews")    
+    .then(res =>{             //adding error checking 
+     console.log("status = ", res.status)
+    return res.json();
+})
+    .then(data => { 
+         console.log(data);
+     })
+     .catch(err => {
+          console.error("fetch error:", err)
+     })
+    }
+
+function getManAIWeek_GN()
+{console.log("call Man AI week");
+    fetch("/api/WeekManAIPharmagnews")
+    .then(res =>{             //adding error checking 
+     console.log("status = ", res.status)
+    return res.json();
+})
+    .then(data => { 
+         console.log(data);
+     })
+     .catch(err => {
+          console.error("fetch error:", err)
+     })
+    }
+
+//GUARDIAN 
+
+function getAI_GuardianWeek(){
+    {console.log("call AI Guardian week");
+        fetch("/api/AIGuardianWeek")
+    .then(res =>{             //adding error checking 
+     console.log("status = ", res.status)
+    return res.json();
+})
+    .then(data => { 
+         console.log(data.response.results);
+     })
+     .catch(err => {
+          console.error("fetch error:", err)
+     })
+    }
+}
+
+function getManAI_GuardianWeek(){
+    {console.log("call Man AI Guardian");
+        fetch("/api/ManAIPharmaGuardianWeek")
+    .then(res =>{             //adding error checking 
+     console.log("status = ", res.status)
+    return res.json();
+})
+    .then(data => { 
+         console.log(data.response.results);
+     })
+     .catch(err => {
+          console.error("fetch error:", err)
+     })
+    }
+}
 
 function getAI(){
     getAI_GN();
@@ -103,5 +136,5 @@ function getAI(){
 function getManAI(){
     getManAI_GN();
     getManAIWeek_GN();
-    getManAI_Guardia();
+    getManAI_Guardian();
 }

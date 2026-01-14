@@ -133,7 +133,44 @@ app.get('/api/AIGuardian', async (req, res) => {
     }
 });
 
+app.get('/api/ManAIPharmaGuardianweek', async (req, res) => { 
+    try {
+       const params = new URLSearchParams({
+        q: '("artificial intelligence" OR AI) AND (Manufacturing OR Pharmaceuticals)', 
+        'from-date': split_week,
+        'show-fields':'headline',
+        'api-key': process.env.GUARDIAN_API_KEY,
 
+       })
+     
+    const response = await fetch(`https://content.guardianapis.com/search?${params}`);
+
+    const data = await response.json();
+    res.json(data)}
+    
+    catch (err) { console.error(err);
+        res.status(500).json({error: "There is an issue with Guardian AI Pharma News"})
+    }
+});
+
+app.get('/api/AIGuardianWeek', async (req, res) => { 
+    try {
+       const params = new URLSearchParams({
+        q: '"artificial intelligence" OR AI or "machine learning"', 
+        'from-date': split_week,
+        'show-fields':'headline',
+        'api-key': process.env.GUARDIAN_API_KEY,
+       })
+     
+    const response = await fetch(`https://content.guardianapis.com/search?${params}`);
+
+    const data = await response.json();
+    res.json(data)}
+    
+    catch (err) { console.error(err);
+        res.status(500).json({error: "There is an issue with Guardian AI News"})
+    }
+});
 
 
 app.get(/\/$|\/Mainpage(\.html)?/, (req,res) => {  // regex to handle variations of mainpage 
