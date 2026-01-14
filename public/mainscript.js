@@ -103,5 +103,5 @@ function getAI(){
 function getManAI(){
     getManAI_GN();
     getManAIWeek_GN();
-    getManAI_Guardia();
+    getManAI_Guardian();
 }
