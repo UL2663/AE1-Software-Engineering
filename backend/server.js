@@ -1,8 +1,10 @@
 // backend server JS file 
-
-//set contants and variables for the session
+//imports 
+const { standardiseGN, standardiseGuardian } = require("../utils/standardise")
 const express = require('express');
 const path = require('path');
+
+//set contants and variables for the session
 const app = express();
 const port = process.env.PORT || 3500;
 var msdayhours = 1000*60*60*12;
@@ -28,8 +30,9 @@ app.get('/api/AIgnews', async (req, res) => {
      
     const response = await fetch(`https://gnews.io/api/v4/search?${params}`);
 
-    const data = await response.json();
-    res.json(data)}
+    const data = await response.json();     //read json to js object 
+    var standardised = data.articles.map(standardiseGN) //standardise output
+    res.json(standardised)} //respond with standardised json
     
     catch (err) { console.error(err);
         res.status(500).json({error: "There is an issue with AI News"})
@@ -49,7 +52,8 @@ app.get('/api/ManAIPharmagnews', async (req, res) => {
     const response = await fetch(`https://gnews.io/api/v4/search?${params}`);
 
     const data = await response.json();
-    res.json(data)}
+    var standardised = data.articles.map(standardiseGN);
+    res.json(standardised)} 
     
     catch (err) { console.error(err);
         res.status(500).json({error: "There is an issue with AI Pharma News"})
@@ -69,7 +73,8 @@ app.get('/api/WeekAIgnews', async (req, res) => {
     const response = await fetch(`https://gnews.io/api/v4/search?${params}`);
 
     const data = await response.json();
-    res.json(data)}
+    var standardised = data.articles.map(standardiseGN)
+    res.json(standardised)}
     
     catch (err) { console.error(err);
         res.status(500).json({error: "There is an issue with AI News"})
@@ -89,13 +94,15 @@ app.get('/api/WeekManAIPharmagnews', async (req, res) => {
     const response = await fetch(`https://gnews.io/api/v4/search?${params}`);
 
     const data = await response.json();
-    res.json(data)}
-    
+    var standardised = data.articles.map(standardiseGN)
+    res.json(standardised)}
+
     catch (err) { console.error(err);
         res.status(500).json({error: "There is an issue with AI Pharma News"})
     }
 });
 
+// GUARDIAN APIS 
 app.get('/api/ManAIPharmaGuardian', async (req, res) => { 
     try {
        const params = new URLSearchParams({
@@ -110,7 +117,9 @@ app.get('/api/ManAIPharmaGuardian', async (req, res) => {
     const response = await fetch(`https://content.guardianapis.com/search?${params}`);
 
     const data = await response.json();
-    res.json(data)}
+    var rawOut  = data.response.results;
+    var standardised = rawOut.map(standardiseGuardian);// guardian works slightly different because of output format
+    res.json(standardised)}
     
     catch (err) { console.error(err);
         res.status(500).json({error: "There is an issue with Guardian AI Pharma News"})
