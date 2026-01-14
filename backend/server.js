@@ -1,4 +1,6 @@
 // backend server JS file 
+
+//set contants and variables for the session
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -98,7 +100,7 @@ app.get('/api/ManAIPharmaGuardian', async (req, res) => {
     try {
        const params = new URLSearchParams({
         q: '(title:"artificial intelligence" OR title:AI) AND (title:Manufacturing OR title:Pharmaceuticals)', 
-        'page-size':'50',
+        'page-sizegitp':'50',
         'from-date': split_day,
         'show-fields':'headline',
         'api-key': process.env.GUARDIAN_API_KEY,
