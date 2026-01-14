@@ -1,6 +1,6 @@
 // backend server JS file 
 //imports 
-const { standardiseGN, standardiseGuardian } = require("/utils/standardise")
+const { standardiseGN, standardiseGuardian } = require("./utils/standardise")
 const express = require('express');
 const path = require('path');
 
