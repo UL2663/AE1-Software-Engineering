@@ -106,7 +106,7 @@ app.get('/api/WeekManAIPharmagnews', async (req, res) => {
 app.get('/api/ManAIPharmaGuardian', async (req, res) => { 
     try {
        const params = new URLSearchParams({
-        q: '("artificial intelligence" OR AI) AND (Manufacturing OR Pharmaceuticals)', 
+        q: '("artificial intelligence") AND (Manufacturing OR Pharmaceuticals)', 
         'page-size':'50',
         'from-date': split_day,
         'show-fields':'headline',
@@ -138,6 +138,7 @@ app.get('/api/AIGuardian', async (req, res) => {
      
     const response = await fetch(`https://content.guardianapis.com/search?${params}`);
 
+    const data = await response.json();
     var rawOut  = data.response.results;
     var standardised = rawOut.map(standardiseGuardian);// guardian works slightly different because of output format
     res.json(standardised)}
@@ -150,7 +151,7 @@ app.get('/api/AIGuardian', async (req, res) => {
 app.get('/api/ManAIPharmaGuardianweek', async (req, res) => { 
     try {
        const params = new URLSearchParams({
-        q: '("artificial intelligence" OR AI) AND (Manufacturing OR Pharmaceuticals)', 
+        q: '("artificial intelligence") AND (Manufacturing OR Pharmaceuticals)', 
         'page-size':'50',
         'from-date': split_week,
         'show-fields':'headline',
