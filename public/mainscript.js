@@ -112,7 +112,7 @@ function getAI_GuardianWeek(){
 }
 
 function getManAI_GuardianWeek(){
-    {   fetch("/api/ManAIPharmaGuardianWeek")
+    {   fetch("/api/ManAIPharmaGuardianweek")
     .then(res =>{             //adding error checking 
      console.log("status = ", res.status)
     return res.json();
@@ -137,5 +137,5 @@ function getManAI(){
     getManAI_GN();
     getManAIWeek_GN();
     getManAI_Guardian();
-    getAI_GuardianWeek();
+    getManAI_GuardianWeek();
 }
