@@ -138,8 +138,9 @@ app.get('/api/AIGuardian', async (req, res) => {
      
     const response = await fetch(`https://content.guardianapis.com/search?${params}`);
 
-    const data = await response.json();
-    res.json(data)}
+    var rawOut  = data.response.results;
+    var standardised = rawOut.map(standardiseGuardian);// guardian works slightly different because of output format
+    res.json(standardised)}
     
     catch (err) { console.error(err);
         res.status(500).json({error: "There is an issue with Guardian AI News"})
@@ -160,7 +161,9 @@ app.get('/api/ManAIPharmaGuardianweek', async (req, res) => {
     const response = await fetch(`https://content.guardianapis.com/search?${params}`);
 
     const data = await response.json();
-    res.json(data)}
+    var rawOut  = data.response.results;
+    var standardised = rawOut.map(standardiseGuardian);// guardian works slightly different because of output format
+    res.json(standardised)}
     
     catch (err) { console.error(err);
         res.status(500).json({error: "There is an issue with Guardian AI Pharma News"})
@@ -180,7 +183,9 @@ app.get('/api/AIGuardianWeek', async (req, res) => {
     const response = await fetch(`https://content.guardianapis.com/search?${params}`);
 
     const data = await response.json();
-    res.json(data)}
+    var rawOut  = data.response.results;
+    var standardised = rawOut.map(standardiseGuardian);// guardian works slightly different because of output format
+    res.json(standardised)}
     
     catch (err) { console.error(err);
         res.status(500).json({error: "There is an issue with Guardian AI News"})
