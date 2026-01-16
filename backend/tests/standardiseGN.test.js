@@ -9,7 +9,8 @@ test("standardises article data correctly", () => {
 
     expect(result).toEqual({
         title: "news",
-        publishedAt: "2026-01-12T10:00:00Z"
+        publishedAt: "2026-01-12T10:00:00Z",
+        tokens: ["news" ]
     });
 
     })
