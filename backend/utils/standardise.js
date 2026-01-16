@@ -1,16 +1,20 @@
+const { stripTokens, tokenizeTitles } = require("./analyse")
+
 const punctuation = /[\.,?!]/g;
 const spaces = /\s+/g
 function standardiseGN(data){
     return{
         title: standardiseTitle(data.title),
-        publishedAt: data.publishedAt
+        publishedAt: data.publishedAt,
+        tokens: stripTokens(tokenizeTitles(standardiseTitle(data.title)))
     };
 }
 
 function standardiseGuardian(data){
     return{
         title: standardiseTitle(data.webTitle),
-        publishedAt:data.webPublicationDate
+        publishedAt:data.webPublicationDate,
+        tokens: stripTokens(tokenizeTitles(standardiseTitle(data.webTitle)))
     };
 }
 
