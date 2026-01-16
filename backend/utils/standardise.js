@@ -15,6 +15,6 @@ function standardiseGuardian(data){
 }
 
 function standardiseTitle(text){
-    return text.toLowerCase().replace(punctuation, "")    
+    return text.toLowerCase().replace(punctuation, "").replace(spaces, " ")   
 }
 module.exports = { standardiseGuardian, standardiseGN, standardiseTitle };
