@@ -8,7 +8,7 @@ test("standardises article data correctly", () => {
     const result = standardiseGN(article);
 
     expect(result).toEqual({
-        title: "News",
+        title: "news",
         publishedAt: "2026-01-12T10:00:00Z"
     });
 

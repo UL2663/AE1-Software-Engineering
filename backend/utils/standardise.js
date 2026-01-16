@@ -1,5 +1,5 @@
 const punctuation = /[\.,?!]/g;
-
+const spaces = /\s+/g
 function standardiseGN(data){
     return{
         title: standardiseTitle(data.title),
