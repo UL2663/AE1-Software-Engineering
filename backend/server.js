@@ -69,7 +69,7 @@ app.get('/api/ManAI_Analysis', async (req, res) => {
         var standardisedGNWeek = rawGNWeek.map(standardiseGN);
 
         //combine all
-        const combined = join_data({standardisedGuardianDay,standardisedGuardianWeek, standardisedGNDay, standardisedGNWeek}) 
+        const combined = join_data(standardisedGuardianDay,standardisedGuardianWeek, standardisedGNDay, standardisedGNWeek) 
 
          res.json(combined)} 
     
@@ -95,7 +95,7 @@ app.get('/api/AI_Analysis', async (req, res) => {
         var standardisedGNWeek = rawGNWeek.map(standardiseGN);
 
         //combine all
-        const combined = join_data({standardisedGuardianDay,standardisedGuardianWeek, standardisedGNDay, standardisedGNWeek}) 
+        const combined = join_data(standardisedGuardianDay,standardisedGuardianWeek, standardisedGNDay, standardisedGNWeek) 
 
          res.json(combined)} 
     
