@@ -59,7 +59,7 @@ app.get('/api/ManAI_Analysis', async (req, res) => {
          const[rawGuardianDay, rawGNDay, rawGuardianWeek, rawGNWeek] = await Promise.all([
             fetchGuardian({q:'("artificial intelligence") AND (Manufacturing OR Pharmaceuticals)', from: split_day}),
             fetchGN({q:'"(artificial intelligence OR AI) AND Manufacturing OR Pharmaceuticals"', from:iso_last_day}),
-            fetchGuardian({q:'("artificial intelligence") AND (Manufacturing OR Pharmaceuticals)', from: split_wee}),
+            fetchGuardian({q:'("artificial intelligence") AND (Manufacturing OR Pharmaceuticals)', from: split_week}),
             fetchGN({q:'"(artificial intelligence OR AI) AND Manufacturing OR Pharmaceuticals"', from:iso_last_week})        ])
     
         //standardise
@@ -86,7 +86,7 @@ app.get('/api/AI_Analysis', async (req, res) => {
             fetchGuardian({q:'"artificial intelligence" OR "machine learning"', from: split_day}),
             fetchGN({q:'AI OR artificial intelligence OR machine learning', from:iso_last_day}),
             fetchGuardian({q:'"artificial intelligence" OR "machine learning"', from: split_week}),
-            fetchGN({q:'AI OR artificial intelligence OR machine learning', from:iso_last_week})        ])
+            fetchGN({q:'AI OR artificial intelligence OR machine learning', from:iso_last_week})])
     
         //standardise
         var standardisedGuardianDay = rawGuardianDay.map(standardiseGuardian);

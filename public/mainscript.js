@@ -1,5 +1,3 @@
-const { get } = require("node:http");
-
 function getAI(){
       {fetch("/api/AI_Analysis")
         .then(res => res.json())
@@ -13,7 +11,6 @@ function getAI(){
         .catch(err => {
           console.error("fetch error:", err)
      })}}
-
 
 function getManAI(){
       {fetch("/api/ManAI_Analysis")
