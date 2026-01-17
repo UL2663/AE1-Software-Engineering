@@ -5,7 +5,7 @@ const spaces = /\s+/g
 function standardiseGN(data){
     return{
         title: standardiseTitle(data.title),
-        publishedAt: data.publishedAt,
+        publishedAt: data.publishedAt.split("T")[0],
         tokens: stripTokens(tokenizeTitles(standardiseTitle(data.title)))
     };
 }
