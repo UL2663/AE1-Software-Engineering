@@ -1,4 +1,4 @@
-const extrawords = new Set(["the","and","or","in","as","is","are","from","by","at","with","on","for","to","its", "a"])
+const extrawords = new Set(["the","and","or","in","as","is","are","from","by","at","with","on","for","to","its", "a", "of", "ai", "it","it's","its","this","an","has","how","why","us","be","but","his","was","not"])
 
 function stripTokens(text){
     return text.filter(text=> !extrawords.has(text)) //manages edge cases of really short titles 
