@@ -16,4 +16,20 @@ function countTokens(data){
     }, {});  
 }
 
-module.exports = { stripTokens, tokenizeTitles, countTokens}
+function paretoValues(data){
+    const total = Object.values(data).reduce((a,b)=> a+b, 0);
+    let cumulative = 0;
+
+    return Object.entries(data)
+    .sort((a,b)=> b[1] - a[1])
+    .map(([kw, count]) => { 
+        cumulative += count;
+        return {
+            kw,
+            count, 
+            cumulative: Math.round((cumulative/total)*100)
+        };
+    });
+}
+
+module.exports = { stripTokens, tokenizeTitles, countTokens, paretoValues}
