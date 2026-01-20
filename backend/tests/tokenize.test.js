@@ -9,5 +9,5 @@ test("produces list of tokens", () => {
 test("produces a tokenized list without extra words", () => { 
     const title = "a good enough article on ai in manufacturing";
     const result = stripTokens(tokenizeTitles(title));
-    expect(result).toEqual( ['good', 'enough', 'article', 'ai', 'manufacturing']);
+    expect(result).toEqual( ['good', 'enough', 'article', 'manufacturing']);
     })

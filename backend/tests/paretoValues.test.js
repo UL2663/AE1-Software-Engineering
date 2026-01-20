@@ -10,7 +10,7 @@ test("pareto values are accurately built", () => {
 
     expect(result).toEqual([
         {kw: "ai", count: 50, cumulative: 50},
-        {kw: "trump", count: 30, cumulative: 30},
-        {kw: "manufacturing", count: 20, cumulative: 20},
+        {kw: "trump", count: 30, cumulative: 80},
+        {kw: "manufacturing", count: 20, cumulative: 100},
     ]);
 })
