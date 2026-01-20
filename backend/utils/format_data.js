@@ -10,7 +10,7 @@ function formatPareto(values){
         },
         {
             type: "line",
-            label: "cumulative %",
+            label: "Cumulative %",
             data: values.map(p => p.cumulative),
             yAxisID: "y1"
         }]

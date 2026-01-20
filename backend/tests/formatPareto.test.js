@@ -2,9 +2,9 @@ const { formatPareto } = require("../utils/format_data")
 
 test("ensure pareto format is correct for chart js manipulation", () => {
     const input = 
-    {kw: "ai", count: 50, cumulative: 50,
-            kw: "trump", count: 30, cumulative: 80,
-            kw: "manufacturing", count: 20, cumulative: 100}
+    [{kw: "ai", count: 50, cumulative: 50},
+            {kw: "trump", count: 30, cumulative: 80},
+            {kw: "manufacturing", count: 20, cumulative: 100}];
 
     result = formatPareto(input)
     expect(result).toEqual({
