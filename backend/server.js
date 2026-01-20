@@ -80,7 +80,7 @@ app.get('/api/ManAI_Analysis', async (req, res) => {
 
          res.json({
             meta: {"count": count,
-                from},
+                from: split_week},
                 charts
          })} 
     
@@ -115,7 +115,7 @@ app.get('/api/AI_Analysis', async (req, res) => {
 
          res.json({
             meta: {"count": count,
-                from},
+                from: split_week},
                 charts
          })} 
     
