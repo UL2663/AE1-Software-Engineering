@@ -2,6 +2,8 @@
 //imports 
 const { standardiseGN, standardiseGuardian } = require("./utils/standardise")
 const { join_data } = require("./utils/join_data")
+const { paretoValues, radar_funct } = require("./utils/analyse") 
+const { formatPareto, formatRadar, getCount } = require("./utils/format_data")
 const express = require('express');
 const path = require('path');
 
@@ -71,7 +73,16 @@ app.get('/api/ManAI_Analysis', async (req, res) => {
         //combine all
         const combined = join_data(standardisedGuardianDay,standardisedGuardianWeek, standardisedGNDay, standardisedGNWeek) 
 
-         res.json(combined)} 
+         //format to chart.js data types
+        const charts = {pareto: formatPareto(paretoValues(combined)),
+                        radar : formatRadar(radar_funct(combined))};
+        const count = getCount(combined)
+
+         res.json({
+            meta: {"count": count,
+                from},
+                charts
+         })} 
     
     catch (err) { console.error(err);
         res.status(500).json({error: "There is an issue with the server"})
@@ -95,9 +106,18 @@ app.get('/api/AI_Analysis', async (req, res) => {
         var standardisedGNWeek = rawGNWeek.map(standardiseGN);
 
         //combine all
-        const combined = join_data(standardisedGuardianDay,standardisedGuardianWeek, standardisedGNDay, standardisedGNWeek) 
+        const combined = join_data(standardisedGuardianDay,standardisedGuardianWeek, standardisedGNDay, standardisedGNWeek);
+        
+        //format to chart.js data types
+        const charts = {pareto: formatPareto(paretoValues(combined)),
+                        radar : formatRadar(radar_funct(combined))};
+        const count = getCount(combined)
 
-         res.json(combined)} 
+         res.json({
+            meta: {"count": count,
+                from},
+                charts
+         })} 
     
     catch (err) { console.error(err);
         res.status(500).json({error: "There is an issue with the server"})
