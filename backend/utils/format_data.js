@@ -30,3 +30,5 @@ function formatRadar(values){
 function getCount(values){
     return { amount_of_entries: Object.keys(values).length }
 }
+
+module.exports = { formatPareto , formatRadar, getCount}
