@@ -1,6 +1,6 @@
 function formatPareto(values){
     return{
-        labels: values.map(p => p.kw),
+        labels: values.map(p => p.date),
         
         datasets: [{
             type:"bar",
