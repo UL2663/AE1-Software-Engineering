@@ -95,3 +95,9 @@ canvas{
   gap: 1rem;
   padding: 50px;
 }
+
+.chart_grid_container > div{
+  text-align: center;
+  padding: 20px;
+  font-size: 20px;
+  height:340px}
