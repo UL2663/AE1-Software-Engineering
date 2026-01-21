@@ -2,7 +2,7 @@
 //imports 
 const { standardiseGN, standardiseGuardian } = require("./utils/standardise")
 const { join_data } = require("./utils/join_data")
-const { paretoValues, radar_funct, countTokens } = require("./utils/analyse") 
+const { paretoValues, radar_funct, countTokens, mapDates } = require("./utils/analyse") 
 const { formatPareto, formatRadar, getCount } = require("./utils/format_data")
 const express = require('express');
 const path = require('path');
@@ -71,13 +71,20 @@ app.get('/api/ManAI_Analysis', async (req, res) => {
         var standardisedGNWeek = rawGNWeek.map(standardiseGN);
 
         //combine all
-        const combined_week = countTokens(join_data(standardisedGuardianWeek, standardisedGNWeek))
-        const combined_month = countTokens(join_data(standardisedGuardianmonth, standardisedGNmonth))
+        const combined_week = join_data(standardisedGuardianWeek, standardisedGNWeek);
+        const combined_month = join_data(standardisedGuardianmonth, standardisedGNmonth);
+
+        //get token and map values 
+        const token_week = countTokens(combined_week)
+        const token_month = countTokens(combined_month)
+        const dates_week = mapDates(combined_week)
+        const dates_month = mapDates(combined_month)
+
          //format to chart.js data types
-        const charts = {pareto_week: formatPareto(paretoValues(combined_week)),
-                        radar_week : formatRadar(radar_funct(combined_week)),
-                        pareto_month: formatPareto(paretoValues(combined_month)),
-                        radar_month : formatRadar(radar_funct(combined_month))};
+        const charts = {pareto_week: formatPareto(paretoValues(dates_week)),
+                        radar_week : formatRadar(radar_funct(token_week)),
+                        pareto_month: formatPareto(paretoValues(dates_month)),
+                        radar_month : formatRadar(radar_funct(token_month))};
         const count_month = getCount(combined_month)
         const count_week = getCount(combined_week)
          res.json({
@@ -110,13 +117,20 @@ app.get('/api/AI_Analysis', async (req, res) => {
         var standardisedGNWeek = rawGNWeek.map(standardiseGN);
 
         //combine all
-        const combined_week = countTokens(join_data(standardisedGuardianWeek, standardisedGNWeek));
-        const combined_month = countTokens(join_data(standardisedGuardianmonth, standardisedGNmonth));
+        const combined_week = join_data(standardisedGuardianWeek, standardisedGNWeek);
+        const combined_month = join_data(standardisedGuardianmonth, standardisedGNmonth);
+
+        //get token and map values 
+        const token_week = countTokens(combined_week)
+        const token_month = countTokens(combined_month)
+        const dates_week = mapDates(combined_week)
+        const dates_month = mapDates(combined_month)
+
          //format to chart.js data types
-        const charts = {pareto_week: formatPareto(paretoValues(combined_week)),
-                        radar_week : formatRadar(radar_funct(combined_week)),
-                        pareto_month: formatPareto(paretoValues(combined_month)),
-                        radar_month : formatRadar(radar_funct(combined_month))};
+        const charts = {pareto_week: formatPareto(paretoValues(dates_week)),
+                        radar_week : formatRadar(radar_funct(token_week)),
+                        pareto_month: formatPareto(paretoValues(dates_month)),
+                        radar_month : formatRadar(radar_funct(token_month))};
         const count_month = getCount(combined_month)
         const count_week = getCount(combined_week)
          res.json({
