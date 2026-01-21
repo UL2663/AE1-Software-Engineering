@@ -11,12 +11,12 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 3500;
 var msdayhours = 1000*60*60*12;
-var last_day = Date.now() - msdayhours;
 var last_week = Date.now() - msdayhours*7;
-var iso_last_day = new Date(last_day).toISOString();
+var last_month = Date.now() - last_week * 7;
 var iso_last_week = new Date(last_week).toISOString();
-var split_day = iso_last_day.split('T')[0];
+var iso_last_month = new Date(last_month).toISOString();
 var split_week = iso_last_week.split('T')[0];
+var split_month = iso_last_month.split('T')[0];
 
 //middleware
 app.use(express.json());
@@ -44,7 +44,7 @@ async function fetchGuardian({q, from}) {
     const params = new URLSearchParams({
         q: q, // , 
         'page-size':'50',
-        'from-date': from, // split_day,
+        'from-date': from, // split_month,
         'show-fields':'headline',
         'api-key': process.env.GUARDIAN_API_KEY,
        })
@@ -58,29 +58,33 @@ app.get('/api/ManAI_Analysis', async (req, res) => {
     try{ 
         //fetch 
 
-         const[rawGuardianDay, rawGNDay, rawGuardianWeek, rawGNWeek] = await Promise.all([
-            fetchGuardian({q:'("artificial intelligence") AND (Manufacturing OR Pharmaceuticals)', from: split_day}),
-            fetchGN({q:'"(artificial intelligence OR AI) AND Manufacturing OR Pharmaceuticals"', from:iso_last_day}),
+         const[rawGuardianmonth, rawGNmonth, rawGuardianWeek, rawGNWeek] = await Promise.all([
+            fetchGuardian({q:'("artificial intelligence") AND (Manufacturing OR Pharmaceuticals)', from: split_month}),
+            fetchGN({q:'"(artificial intelligence OR AI) AND Manufacturing OR Pharmaceuticals"', from:iso_last_month}),
             fetchGuardian({q:'("artificial intelligence") AND (Manufacturing OR Pharmaceuticals)', from: split_week}),
             fetchGN({q:'"(artificial intelligence OR AI) AND Manufacturing OR Pharmaceuticals"', from:iso_last_week})        ])
     
         //standardise
-        var standardisedGuardianDay = rawGuardianDay.map(standardiseGuardian);
+        var standardisedGuardianmonth = rawGuardianmonth.map(standardiseGuardian);
         var standardisedGuardianWeek = rawGuardianWeek.map(standardiseGuardian);
-        var standardisedGNDay = rawGNDay.map(standardiseGN);
+        var standardisedGNmonth = rawGNmonth.map(standardiseGN);
         var standardisedGNWeek = rawGNWeek.map(standardiseGN);
 
         //combine all
-        const combined = join_data(standardisedGuardianDay,standardisedGuardianWeek, standardisedGNDay, standardisedGNWeek) 
-
+        const combined_week = join_data(standardisedGuardianmonth,standardisedGuardianWeek, standardisedGNmonth, standardisedGNWeek) 
+        const combined_month = join_data(standardisedGuardianmonth, standardisedGNmonth)
          //format to chart.js data types
-        const charts = {pareto: formatPareto(paretoValues(combined)),
-                        radar : formatRadar(radar_funct(combined))};
-        const count = getCount(combined)
-
+        const charts = {pareto_week: formatPareto(paretoValues(combined_week)),
+                        radar_week : formatRadar(radar_funct(combined_week)),
+                        pareto_month: formatPareto(paretoValues(combined_month)),
+                        radar_month : formatRadar(radar_funct(combined_month))};
+        const count_month = getCount(combined_month)
+        const count_week = getCount(combined_week)
          res.json({
-            meta: {"count": count,
-                from: split_week},
+            meta: {
+                "count_week": count_week,
+                "count_month": count_month,
+                from: split_month},
                 charts
          })} 
     
@@ -93,29 +97,33 @@ app.get('/api/AI_Analysis', async (req, res) => {
     try{ 
         //fetch 
 
-         const[rawGuardianDay, rawGNDay, rawGuardianWeek, rawGNWeek] = await Promise.all([
-            fetchGuardian({q:'"artificial intelligence" OR "machine learning"', from: split_day}),
-            fetchGN({q:'AI OR artificial intelligence OR machine learning', from:iso_last_day}),
+         const[rawGuardianmonth, rawGNmonth, rawGuardianWeek, rawGNWeek] = await Promise.all([
+            fetchGuardian({q:'"artificial intelligence" OR "machine learning"', from: split_month}),
+            fetchGN({q:'AI OR artificial intelligence OR machine learning', from:iso_last_month}),
             fetchGuardian({q:'"artificial intelligence" OR "machine learning"', from: split_week}),
             fetchGN({q:'AI OR artificial intelligence OR machine learning', from:iso_last_week})])
     
         //standardise
-        var standardisedGuardianDay = rawGuardianDay.map(standardiseGuardian);
+        var standardisedGuardianmonth = rawGuardianmonth.map(standardiseGuardian);
         var standardisedGuardianWeek = rawGuardianWeek.map(standardiseGuardian);
-        var standardisedGNDay = rawGNDay.map(standardiseGN);
+        var standardisedGNmonth = rawGNmonth.map(standardiseGN);
         var standardisedGNWeek = rawGNWeek.map(standardiseGN);
 
         //combine all
-        const combined = join_data(standardisedGuardianDay,standardisedGuardianWeek, standardisedGNDay, standardisedGNWeek);
-        
-        //format to chart.js data types
-        const charts = {pareto: formatPareto(paretoValues(combined)),
-                        radar : formatRadar(radar_funct(combined))};
-        const count = getCount(combined)
-
+        const combined_week = join_data(standardisedGuardianmonth,standardisedGuardianWeek, standardisedGNmonth, standardisedGNWeek) 
+        const combined_month = join_data(standardisedGuardianmonth, standardisedGNmonth)
+         //format to chart.js data types
+        const charts = {pareto_week: formatPareto(paretoValues(combined_week)),
+                        radar_week : formatRadar(radar_funct(combined_week)),
+                        pareto_month: formatPareto(paretoValues(combined_month)),
+                        radar_month : formatRadar(radar_funct(combined_month))};
+        const count_month = getCount(combined_month)
+        const count_week = getCount(combined_week)
          res.json({
-            meta: {"count": count,
-                from: split_week},
+            meta: {
+                "count_week": count_week,
+                "count_month": count_month,
+                from: split_month},
                 charts
          })} 
     
