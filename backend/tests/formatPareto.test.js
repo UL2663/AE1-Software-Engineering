@@ -2,13 +2,15 @@ const { formatPareto } = require("../utils/format_data")
 
 test("ensure pareto format is correct for chart js manipulation", () => {
     const input = 
-    [{kw: "ai", count: 50, cumulative: 50},
-            {kw: "trump", count: 30, cumulative: 80},
-            {kw: "manufacturing", count: 20, cumulative: 100}];
+    [
+        {date: "2026-01-12", count: 50, cumulative: 50},
+        {date: "2026-01-13", count: 30, cumulative: 80},
+        {date: "2026-01-14", count: 20, cumulative: 100},
+    ];
 
     result = formatPareto(input)
     expect(result).toEqual({
-        "labels": ["ai","trump","manufacturing"],
+        "labels": ["2026-01-12","2026-01-13","2026-01-14"],
         "datasets": [
             {
                 "type":"bar",
