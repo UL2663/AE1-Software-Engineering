@@ -110,8 +110,8 @@ app.get('/api/AI_Analysis', async (req, res) => {
         var standardisedGNWeek = rawGNWeek.map(standardiseGN);
 
         //combine all
-        const combined_week = join_data(standardisedGuardianmonth,standardisedGuardianWeek, standardisedGNmonth, standardisedGNWeek) 
-        const combined_month = join_data(standardisedGuardianmonth, standardisedGNmonth)
+        const combined_week = countTokens(join_data(standardisedGuardianWeek, standardisedGNWeek)) 
+        const combined_month = countTokens(join_data(standardisedGuardianmonth, standardisedGNmonth))
          //format to chart.js data types
         const charts = {pareto_week: formatPareto(paretoValues(combined_week)),
                         radar_week : formatRadar(radar_funct(combined_week)),
