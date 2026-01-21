@@ -37,11 +37,17 @@ function drawPareto(chartData, id) {
   return new Chart(element, {
     data: chartData,
     options: {
+      responsive: true,
+      interaction:{ mode: "index", intersect: false },
       scales: {
-        y: {beginAtZero: true },
+        y: {beginAtZero: true,
+          title: {display:true, text: "frequency"}
+        },
         y1: { beginAtZero: true,
           position: "right",
-          max: 100
+          max: 100,
+          grid: {drawOnChartArea: false},
+          title: {display: true, text: "Cumulative %"}
         }
       }
     }
@@ -55,13 +61,13 @@ function drawRadar(chartData, id) {
     type: "radar",
     data: chartData,
     options: {
+      responsive:true,
       scales: {
-        y: {beginAtZero: true },
-        y1: { beginAtZero: true,
-          position: "right",
-          max: 100
+        r: {
+          min:0,
+          max: 1, 
+          ticks: {stepSize:0.2}
+        }
         }
       }
-    }
-  });
-}
+    })}
