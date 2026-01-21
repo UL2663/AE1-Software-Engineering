@@ -28,20 +28,29 @@ function countTokens(data){
     }, {});  
 }
 
+function mapDates(data){
+    const counts = {};
+    data.forEach(item =>{
+        const day = item.publishedAt.slice(0,10);
+        counts[day] = (counts[day]||0)+1;
+    })
+    return counts;
+}
+
 function paretoValues(data){
     const total = Object.values(data).reduce((a,b)=> a+b, 0);
     let cumulative = 0;
 
     return Object.entries(data)
     .sort((a,b)=> b[1] - a[1])
-    .map(([kw, count]) => { 
+    .map(([date, count]) => { 
         cumulative += count;
         return {
-            kw,
+            date,
             count, 
             cumulative: Math.round((cumulative/total)*100)
         };
-    });
+    });//
 }
 
 function radar_funct(data){
@@ -53,4 +62,4 @@ function radar_funct(data){
     return out
 }
 
-module.exports = { stripTokens, tokenizeTitles, countTokens, paretoValues, radar_funct}
+module.exports = { stripTokens, tokenizeTitles, countTokens, paretoValues, radar_funct, mapDates}
