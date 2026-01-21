@@ -39,8 +39,12 @@ function getManAI(){
      })}}
 
 function drawPareto(chartData, id) {
-  const element = document.getElementById(id)
-  
+  const element = document.getElementById(id);
+  var chart_obj = Chart.getChart(id)
+  if(chart_obj){
+    chart_obj.destroy()
+  }
+
   return new Chart(element, {
     data: chartData,
     options: {
@@ -64,17 +68,15 @@ function drawPareto(chartData, id) {
 function drawRadar(chartData, id) {
   const element = document.getElementById(id)
   
+  var chart_obj = Chart.getChart(id)
+  if(chart_obj){
+    chart_obj.destroy()
+  }
+
   return new Chart(element, {
     type: "radar",
     data: chartData,
     options: {
-      responsive:true,
-      scales: {
-        r: {
-          min:0,
-          max: 1, 
-          ticks: {stepSize:0.2}
-        }
-        }
+      responsive:true
       }
     })}
