@@ -2,9 +2,16 @@ function getAI(){
       {fetch("/api/AI_Analysis")
         .then(res => res.json())
         .then(data => {
+          drawPareto(data.charts.pareto_week,"weekly_pareto")
+          drawPareto(data.charts.pareto_month,"monthly_pareto")
+
+          drawRadar(data.charts.radar_week, "weekly_radar")
+          drawRadar(data.charts.radar_month, "monthly_radar")
             //draw paretos
             //draw radars
             //make text cards 
+
+            console.log(data)
 
             console.log(data)
         })  
