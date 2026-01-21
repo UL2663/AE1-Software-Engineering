@@ -126,7 +126,7 @@ app.get('/api/AI_Analysis', async (req, res) => {
                 from: split_month},
                 charts
          })} 
-    
+    //
     catch (err) { console.error(err);
         res.status(500).json({error: "There is an issue with the server"})
     }})
