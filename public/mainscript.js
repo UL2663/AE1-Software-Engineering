@@ -31,8 +31,8 @@ function getManAI(){
           console.error("fetch error:", err)
      })}}
 
-function drawPareto(chartData, element) {
-  const element = document.getElementById(element)
+function drawPareto(chartData, id) {
+  const element = document.getElementById(id)
   
   return new Chart(element, {
     data: chartData,
@@ -48,8 +48,8 @@ function drawPareto(chartData, element) {
   });
 }
 
-function drawRadar(chartData, element) {
-  const element = document.getElementById(element)
+function drawRadar(chartData, id) {
+  const element = document.getElementById(id)
   
   return new Chart(element, {
     type: "radar",
