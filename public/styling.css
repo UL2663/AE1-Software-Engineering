@@ -24,6 +24,11 @@ h2{
   font-weight: lighter;
 }
 
+canvas{
+  background: white;
+  border-radius: 8px;
+}
+
 #title_header{ 
   text-align: center;
 }
