@@ -84,3 +84,14 @@ canvas{
   padding: 20px 0;
   font-size: 20px;
 }
+
+.chart_grid_container{
+  display: grid;
+  width: 50vw;
+  min-width: 320px;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 150px 150px;
+  gap: 1rem;
+  padding: 50px;
+}
