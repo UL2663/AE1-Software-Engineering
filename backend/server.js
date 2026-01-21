@@ -2,7 +2,7 @@
 //imports 
 const { standardiseGN, standardiseGuardian } = require("./utils/standardise")
 const { join_data } = require("./utils/join_data")
-const { paretoValues, radar_funct } = require("./utils/analyse") 
+const { paretoValues, radar_funct, countTokens } = require("./utils/analyse") 
 const { formatPareto, formatRadar, getCount } = require("./utils/format_data")
 const express = require('express');
 const path = require('path');
@@ -71,8 +71,8 @@ app.get('/api/ManAI_Analysis', async (req, res) => {
         var standardisedGNWeek = rawGNWeek.map(standardiseGN);
 
         //combine all
-        const combined_week = join_data(standardisedGuardianmonth,standardisedGuardianWeek, standardisedGNmonth, standardisedGNWeek) 
-        const combined_month = join_data(standardisedGuardianmonth, standardisedGNmonth)
+        const combined_week = countTokens(join_data(standardisedGuardianWeek, standardisedGNWeek))
+        const combined_month = countTokens(join_data(standardisedGuardianmonth, standardisedGNmonth))
          //format to chart.js data types
         const charts = {pareto_week: formatPareto(paretoValues(combined_week)),
                         radar_week : formatRadar(radar_funct(combined_week)),
