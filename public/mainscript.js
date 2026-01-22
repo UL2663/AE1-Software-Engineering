@@ -1,4 +1,7 @@
 function getAI(){
+       const chartcontainer = document.getElementById("figures")
+      chartcontainer.style.display="grid"
+    
       {fetch("/api/AI_Analysis")
         .then(res => res.json())
         .then(data => {
@@ -22,7 +25,7 @@ function getAI(){
 
 function getManAI(){
       const chartcontainer = document.getElementById("figures")
-      chartcontainer.style.display="true"
+      chartcontainer.style.display="grid"
       {fetch("/api/ManAI_Analysis")
         .then(res => res.json())
         .then(data => {
