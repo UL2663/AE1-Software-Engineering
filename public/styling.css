@@ -129,4 +129,6 @@ canvas{
   font-weight: lighter;
   text-align: center;
   min-height: 170px;
+  padding: 1rem;
+  font-family:'Courier New', Courier, monospace;
 }
