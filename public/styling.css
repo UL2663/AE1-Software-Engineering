@@ -104,7 +104,7 @@ canvas{
   min-height: 300px;
 }
 
-#graph_C1,#graph_C2{
+#graph_C1,#graph_C2, #card_one, #card_two{
   display: grid;
   grid-template-rows: 1fr 1fr;
   gap: 1rem;
