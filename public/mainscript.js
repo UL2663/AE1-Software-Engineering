@@ -10,6 +10,7 @@ function getAI(){
             //draw paretos
             //draw radars
             //make text cards 
+          makeCard(data.meta.count_week.amount_of_entries, data.meta.from, data.meta.top_token)
 
             console.log(data)
 
@@ -31,6 +32,7 @@ function getManAI(){
             //draw paretos
             //draw radars
             //make text cards 
+          makeCard(data.meta.count_week.amount_of_entries, data.meta.from, data.meta.top_token)
 
             console.log(data)
         })  
@@ -80,3 +82,11 @@ function drawRadar(chartData, id) {
       responsive:true
       }
     })}
+
+    function makeCard(count, date, top_token, id){
+      const element = document.getElementById(id)
+      element.innerHTML("<h3> Total articles from " + date + " : </h3>",
+                         "<h2 id='value'> " + count + " </h2>",
+                        "<h3> Most Common Token : </h3>",
+                         "<h2 id='value'> " + top_token + " </h2>")
+    }

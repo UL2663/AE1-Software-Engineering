@@ -2,7 +2,7 @@
 //imports 
 const { standardiseGN, standardiseGuardian } = require("./utils/standardise")
 const { join_data } = require("./utils/join_data")
-const { paretoValues, radar_funct, countTokens, mapDates } = require("./utils/analyse") 
+const { paretoValues, radar_funct, countTokens, mapDates, topToken } = require("./utils/analyse") 
 const { formatPareto, formatRadar, getCount } = require("./utils/format_data")
 const express = require('express');
 const path = require('path');
@@ -10,9 +10,9 @@ const path = require('path');
 //set contants and variables for the session
 const app = express();
 const port = process.env.PORT || 3500;
-var msdayhours = 1000*60*60*12;
+var msdayhours = 1000*60*60*24;
 var last_week = Date.now() - msdayhours*7;
-var last_month = Date.now() - last_week * 7;
+var last_month = Date.now() - msdayhours*30;
 var iso_last_week = new Date(last_week).toISOString();
 var iso_last_month = new Date(last_month).toISOString();
 var split_week = iso_last_week.split('T')[0];
@@ -91,6 +91,8 @@ app.get('/api/ManAI_Analysis', async (req, res) => {
             meta: {
                 "count_week": count_week,
                 "count_month": count_month,
+                "top_week": topToken(combined_week),
+                "top_month" : topToken(combined_month),
                 from: split_month},
                 charts
          })} 
@@ -137,6 +139,8 @@ app.get('/api/AI_Analysis', async (req, res) => {
             meta: {
                 "count_week": count_week,
                 "count_month": count_month,
+                "top_week": topToken(combined_week),
+                "top_month" : topToken(combined_month),
                 from: split_month},
                 charts
          })} 
