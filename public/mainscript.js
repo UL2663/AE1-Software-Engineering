@@ -1,6 +1,7 @@
 function getAI(){
        const chartcontainer = document.getElementById("figures")
       chartcontainer.style.display="grid"
+      chartcontainer.scrollIntoView()
     
       {fetch("/api/AI_Analysis")
         .then(res => res.json())
@@ -26,6 +27,7 @@ function getAI(){
 function getManAI(){
       const chartcontainer = document.getElementById("figures")
       chartcontainer.style.display="grid"
+        chartcontainer.scrollIntoView()
       {fetch("/api/ManAI_Analysis")
         .then(res => res.json())
         .then(data => {
@@ -91,8 +93,5 @@ function drawRadar(chartData, id) {
 
 function makeCard(count, date, top_token, id){
   const element = document.getElementById(id)
-  element.innerHTML= "<h3> Total articles from " + date + " : </h3>",
-                         "<h2 id='value'> " + count + " </h2>",
-                        "<h3> Most Common Token : </h3>",
-                         "<h2 id='value'> " + top_token + " </h2>"
+  element.innerHTML= "<h3> Total articles from " + date + " : </h3> <h2 id='value'> " + count + " </h2><h3> Most Common Token : </h3><h2 id='value'> " + top_token + " </h2>"
     }
