@@ -101,7 +101,6 @@ app.get('/api/ManAI_Analysis', async (req, res) => {
         res.status(500).json({error: "There is an issue with the server"})
     }})
 
-
 app.get('/api/AI_Analysis', async (req, res) => { 
     try{ 
         //fetch 
@@ -141,7 +140,8 @@ app.get('/api/AI_Analysis', async (req, res) => {
                 "count_month": count_month,
                 "top_week": topToken(combined_week),
                 "top_month" : topToken(combined_month),
-                from: split_month},
+                from_week: split_week,
+                from_month: split_month},
                 charts
          })} 
     //

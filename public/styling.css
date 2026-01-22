@@ -113,3 +113,5 @@ canvas{
 #monthly_radar, #weekly_radar{
   height:80%
 }
+
+#figures{display:none}
