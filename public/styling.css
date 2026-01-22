@@ -123,10 +123,16 @@ canvas{
   font-weight: bolder;
 }
 
-#card_one, #card_two{
-  display: grid;
+#cards{
+  display:grid;
   grid-template-rows: 1fr 1fr;
-  gap: 1rem;
+  gap: 1.5rem;
+}
+
+#card_one, #card_two{
+  background: white;
+  border-radius: 12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
   font-size: 16px;
   font-weight: lighter;
   text-align: center;
