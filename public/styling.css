@@ -27,6 +27,9 @@ h2{
 canvas{
   background: white;
   border-radius: 8px;
+  width: 100% !important;
+  height: 100% !important;
+
 }
 
 #title_header{ 
@@ -87,18 +90,22 @@ canvas{
 
 .chart_grid_container{
   display: grid;
-  width: 50vw;
+  width: 90vw;
   min-width: 320px;
   margin: 0 auto;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 150px 150px;
-  gap: 1rem;
-  padding: 50px;
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-rows: auto;
+  gap: 2rem;
+  padding: 2rem;
 }
 
 .chart_grid_container > div{
-  text-align: center;
-  padding: 20px 0;
-  font-size: 20px;
-  height: 370;
+  min-height: 450px;
+}
+
+#graph_C1,#graph_C2{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+  height: 100%
 }
