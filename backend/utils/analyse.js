@@ -1,7 +1,7 @@
 const extrawords = new Set(["the","and","or","in","as","is","are","from","by","at","with","on","for","to","its", "a", "of", "ai", "it","it's","its","this","an","has","how","why","us","be","but","his","was","not"])
 
 const AI_categories = { //aware that these may need to be added to over time  
-  politics: ["trump", "government", "bill", "policy", "election", "labor", "law", "regulation"],
+  politics: ["trump", "government", "bill", "policy", "election", "labor", "law", "regulation","war"],
 
   education: ["education", "learning", "skills", "training", "university", "programme", "students"],
 
@@ -9,7 +9,7 @@ const AI_categories = { //aware that these may need to be added to over time
 
   health: ["pharma", "pharmaceutical", "medical", "medicine", "health", "drug", "clinical"],
 
-  morals_ethics: ["ethics", "social", "society", "faith", "religion", "speech", "rights", "fairness"]
+  morals_ethics: ["ethics", "social", "society", "faith", "religion", "speech", "rights", "fairness", "pope", "imam","rights"]
 }
 
 function stripTokens(text){
