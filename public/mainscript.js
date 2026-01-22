@@ -10,8 +10,8 @@ function getAI(){
             //draw paretos
             //draw radars
             //make text cards 
-          makeCard(data.meta.count_week.amount_of_entries, data.meta.from, data.meta.top_token)
-
+          makeCard(data.meta.count_week.amount_of_entries, data.meta.from_week, data.meta.top_week, "card_one")
+          makeCard(data.meta.count_month.amount_of_entries, data.meta.from_moth, data.meta.top_month, "card_two")
             console.log(data)
 
             console.log(data)
@@ -21,6 +21,8 @@ function getAI(){
      })}}
 
 function getManAI(){
+      const chartcontainer = document.getElementById("figures")
+      chartcontainer.style.display="true"
       {fetch("/api/ManAI_Analysis")
         .then(res => res.json())
         .then(data => {
@@ -32,8 +34,9 @@ function getManAI(){
             //draw paretos
             //draw radars
             //make text cards 
-          makeCard(data.meta.count_week.amount_of_entries, data.meta.from, data.meta.top_token)
-
+          makeCard(data.meta.count_week.amount_of_entries, data.meta.from_week, data.meta.top_week, "card_one")
+          makeCard(data.meta.count_month.amount_of_entries, data.meta.from_month, data.meta.top_month, "card_two")
+          
             console.log(data)
         })  
         .catch(err => {
@@ -83,9 +86,9 @@ function drawRadar(chartData, id) {
       }
     })}
 
-    function makeCard(count, date, top_token, id){
-      const element = document.getElementById(id)
-      element.innerHTML("<h3> Total articles from " + date + " : </h3>",
+function makeCard(count, date, top_token, id){
+  const element = document.getElementById(id)
+  element.innerHTML("<h3> Total articles from " + date + " : </h3>",
                          "<h2 id='value'> " + count + " </h2>",
                         "<h3> Most Common Token : </h3>",
                          "<h2 id='value'> " + top_token + " </h2>")
