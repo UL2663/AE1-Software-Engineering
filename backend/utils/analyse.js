@@ -50,7 +50,7 @@ function paretoValues(data){
             count, 
             cumulative: Math.round((cumulative/total)*100)
         };
-    });//
+    });
 }
 
 function radar_funct(data){
