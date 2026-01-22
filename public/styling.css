@@ -29,7 +29,7 @@ canvas{
   background: white;
   border-radius: 8px;
   width: 100% !important;
-  height: 100% !important;
+  height:auto !important;
 
 }
 
