@@ -91,8 +91,8 @@ app.get('/api/ManAI_Analysis', async (req, res) => {
             meta: {
                 "count_week": count_week,
                 "count_month": count_month,
-                "top_week": topToken(combined_week),
-                "top_month" : topToken(combined_month),
+                "top_week": topToken(token_week),
+                "top_month" : topToken(token_month),
                 "from_week": split_week,
                 "from_month":split_month},
                 charts
@@ -139,8 +139,8 @@ app.get('/api/AI_Analysis', async (req, res) => {
             meta: {
                 "count_week": count_week,
                 "count_month": count_month,
-                "top_week": topToken(combined_week),
-                "top_month" : topToken(combined_month),
+                "top_week": topToken(token_week),
+                "top_month" : topToken(token_month),
                 "from_week": split_week,
                 "from_month": split_month},
                 charts
