@@ -104,7 +104,7 @@ canvas{
   min-height: 300px;
 }
 
-#graph_C1,#graph_C2, #card_one, #card_two{
+#graph_C1,#graph_C2{
   display: grid;
   grid-template-rows: 1fr 1fr;
   gap: 1rem;
@@ -123,8 +123,10 @@ canvas{
   font-weight: bolder;
 }
 
-#cards{
-  background-color: white;
+#card_one, #card_two{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
   font-size: 16px;
   font-weight: lighter;
   text-align: center;
