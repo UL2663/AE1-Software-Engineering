@@ -62,4 +62,8 @@ function radar_funct(data){
     return out
 }
 
-module.exports = { stripTokens, tokenizeTitles, countTokens, paretoValues, radar_funct, mapDates}
+function topToken(data){
+    return Object.entries(data).reduce((max, current)=> current [1] > max[1] ? current : max );
+}
+
+module.exports = { stripTokens, tokenizeTitles, countTokens, paretoValues, radar_funct, mapDates, topToken}

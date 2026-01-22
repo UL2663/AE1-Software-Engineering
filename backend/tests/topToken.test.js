@@ -9,6 +9,6 @@ test("make sure the top token value only is returned", () => {
     };
 
     const result = topToken(tokens)
-    expect(result).toEqual({"policy":26})
+    expect(result).toEqual(["policy",26])
 
 })
