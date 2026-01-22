@@ -91,5 +91,5 @@ function makeCard(count, date, top_token, id){
   element.innerHTML= "<h3> Total articles from " + date + " : </h3>",
                          "<h2 id='value'> " + count + " </h2>",
                         "<h3> Most Common Token : </h3>",
-                         "<h2 id='value'> " + top_token + " </h2>")
+                         "<h2 id='value'> " + top_token + " </h2>"
     }
