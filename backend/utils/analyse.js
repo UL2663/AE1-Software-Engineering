@@ -1,4 +1,4 @@
-const extrawords = new Set(["the","and","or","in","as","is","are","from","by","at","with","on","for","to","its", "a", "of", "ai", "it","it's","its","this","an","has","how","why","us","be","but","his","was","not", "-","says","–"])
+const extrawords = new Set(["the","and","or","in","as","is","are","from","by","at","with","on","for","to","its", "a", "of", "ai", "it","it's","its","this","an","has","how","why","us","be","but","his","was","not", "-","says","–","what"])
 
 const AI_categories = { //aware that these may need to be added to over time  
   politics: ["trump", "government", "bill", "policy", "election", "labor", "law", "regulation","war"],
