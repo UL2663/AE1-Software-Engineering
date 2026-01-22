@@ -94,7 +94,7 @@ app.get('/api/ManAI_Analysis', async (req, res) => {
                 "top_week": topToken(combined_week),
                 "top_month" : topToken(combined_month),
                 "from_week": split_week,
-                "from month":split_month},
+                "from_month":split_month},
                 charts
          })} 
     
