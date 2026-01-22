@@ -6,8 +6,9 @@
 }
 
 body{
-  height: 100vh;
+  min-height: 100%;
   background: linear-gradient(to bottom, var(--az_purple), var(--maastricht_blue));
+  background-attachment: fixed;
 }
 
 h1{
@@ -100,12 +101,15 @@ canvas{
 }
 
 .chart_grid_container > div{
-  min-height: 450px;
+  min-height: 300px;
 }
 
 #graph_C1,#graph_C2{
   display: grid;
   grid-template-rows: 1fr 1fr;
   gap: 1rem;
-  height: 100%
+}
+
+#monthly_radar, #weekly_radar{
+  height:80%
 }
