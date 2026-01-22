@@ -15,7 +15,7 @@ function getAI(){
             //draw radars
             //make text cards 
           makeCard(data.meta.count_week.amount_of_entries, data.meta.from_week, data.meta.top_week, "card_one")
-          makeCard(data.meta.count_month.amount_of_entries, data.meta.from_moth, data.meta.top_month, "card_two")
+          makeCard(data.meta.count_month.amount_of_entries, data.meta.from_month, data.meta.top_month, "card_two")
             console.log(data)
 
             console.log(data)

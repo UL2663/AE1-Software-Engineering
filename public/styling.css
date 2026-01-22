@@ -25,12 +25,6 @@ h2{
   font-weight: lighter;
 }
 
-h3{
-  background-color: #d9d9d9;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 24px;
-}
-
 canvas{
   background: white;
   border-radius: 8px;
@@ -124,7 +118,15 @@ canvas{
 
 #value { 
   font-size: 30px;
-  background-color: #d9d9d9;
+  background-color: white;
   color: var(--maastricht_blue);
   font-weight: bolder;
+}
+
+#cards{
+  background-color: white;
+  font-size: 16px;
+  font-weight: lighter;
+  text-align: center;
+  min-height: 170px;
 }
