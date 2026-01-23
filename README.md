@@ -68,21 +68,21 @@ I directly used the outputs of this analysis (especially the post-its) to influe
     <summary> 💠 Dynamic Risk Tracking </summary> </details>
 </details>
 <details> 
-    <summary> 🗣️ 4. MVP Build Narration </summary >
+    <summary> 🗣️ 3. MVP Build Narration </summary >
     </details>
 <details> 
-    <summary> 🚚 5. Test Driven Development </summary >
+    <summary> 🚚 4. Test Driven Development </summary >
     </details>
 <details> 
-    <summary> 🔨 6. CI/CD </summary >
+    <summary> 🔨 5. CI/CD </summary >
     </details>
 <details> 
-    <summary> 👤 7. User Documentation </summary >
+    <summary> 👤 6. User Documentation </summary >
     </details>
 <details> 
-    <summary> 🛠️ 8. Technical Documentation </summary >
+    <summary> 🛠️ 7. Technical Documentation </summary >
     </details>
 <details> 
-    <summary> 📑 9. Evaluation </summary >
+    <summary> 📑 8. Evaluation </summary >
     </details>
 
