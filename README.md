@@ -164,7 +164,8 @@ The database offering on render is a free subscription service, limited to a one
  10. Join the two api data sets together
  11. Focus on analysis functions using TDD (count and map, graph structures)
  12. Focus on Chart.JS formatting functions
-** 13. Rewrite server response in the following structure:**
+     
+**13. Rewrite server response in the following structure:**
      
      fetch --> standardise --> count and map functions --> pareto analysis/radar analysis/card counts --> format outputs for response (focus on correct call order)
 
