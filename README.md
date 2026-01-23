@@ -115,22 +115,45 @@ _final system diagram_
 
 ### Test-Driven Development 
 
+Where appropriate, I utilised test-driven develoment (TDD), specifically for standardise functions, formatting functions and analysis functions.
+
+I wrote tests first, committed them to the branch and then wrote the corresponding functions. 
+Some functions did not require much refactoring because they were relatively basic, but for analysis functions, such as the pareto function, outputs and input data required a lot of reworking. 
+
+*Where this could be improved* 
+While tests were written first and functions written subsequently, this is not clearly evidenced in commits. Clearer RED-GREEN-REFACTOR titles would have outlined what was happening at each stage of development. The below image depicts a good example of where red-green-refactor was used but not well labelled.
+
+<img width="874" height="405" alt="image" src="https://github.com/user-attachments/assets/e7769c8e-8f92-43d9-b369-7403d78c45ed" />
+
+_Example of a commit chain for functions where TDD was used but poorly documented and missing some key points_
+
+When I did utilise TDD, I found it really beneficial for bug-fixing. By having the certainty that my functions themselves were passing, issues were typically in the integration of the functions in the server, such as passing in the wrong data types (objects vs arrays), or in one unfortunate case, completely missing a format/count function that was a vital step in the process. 
+
 ### User Acceptance Testing 
-// do today // 
+To test the user requirements of my solution, I built a small survey where respondents were asked to rate how much they agreed with a statement on a scale of 1 - 10.
+I collected initials and role information to depict testing across a wider range of user types. 
+These results were averaged and communally discussed, with closing comments attached to the box. The format of this feedback gathering was in a working time sesison.
+
+
+_Output of user survey_
+
+From the user survey, this went well, this needs to be improved. 
 
 ### Accessibility Review using lighthouse 🚨
 
-
+### Unit Testing 🚨
 
 ## 🔨 5. CI/CD  >
 
 ### Node CI process setup. 
 To setup a node CI action, I had to change the path for the working directory to point to my /backend file, where my package-lock.json file is held. 
 Because I hadn't also redirected the cache to this directory, for the first few days of using actions, all build files failed and it looks like mthe project was very broken.
-However, once I had included this line of code, the action provided a platform to run end-to-end pushes and testing, and provided better visual management of the status of my project (with badges and ticks/crosses when something faile ). 
+However, once I had included this line of code, the action provided a platform to run end-to-end pushes and testing, and provided better visual management of the status of my project (with badges and ticks/crosses when something failed). 
 
-**what I would do differently: **
-This should have been implemented as soon as I strated doing test driven development. This would have enabled much faster troubleshooting with integration in github, as well as providing a clearer timeline of development (describing red - green - refactor with more accuracy). 
+**what I would do differently:**
+
+This should have been implemented as soon as I started doing test driven development. This would have enabled much faster troubleshooting with integration in github, as well as providing a clearer timeline of development (describing red - green - refactor with more accuracy). 
+
 
 ## 👤 6. User Documentation  >
     
