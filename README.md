@@ -36,7 +36,7 @@ Daily figures were also removed due to not enough data being returned by API cal
 
 Although I found GitHub project incredibly useful for tracking requirements and managing process, (especially the 'Roadmap feature' throughout holiday periods so that I could structure my workload), some additional functionality for risk-tracking would have been beneficial. 
 
-<img width="977" height="742" alt="image" src="https://github.com/user-attachments/assets/01dccc29-9bcb-4fa8-8ac7-a7527cc134b0" />
+<img width="490" height="371" alt="image" src="https://github.com/user-attachments/assets/01dccc29-9bcb-4fa8-8ac7-a7527cc134b0" />
 
 _GitHub Roadmap Feature_
 
@@ -79,7 +79,7 @@ From the user-experience mapping, I drafted an initial version of functional and
 
 | URS ID | Issue Number | Feature | Pull Req | Status | Justification |
 |--------|--------------|---------|--------|--------|---------------|
-| F1 | #4 |        Graphs and figures   | 39ddc7d | Closed | Sbility to interrogate api data              
+| F1 | #4 |        Graphs and figures   | 39ddc7d | Closed | Ability to interrogate api data              
 | F2 | #5 |         Navigation buttons  | 11815c8 | Closed | Interaction and generate command
 | F3 | #6 |        Text Cards           | Card functions d336783 | Closed | Easier interpretation for some audiences
 | F4 | #13 |       Man AI endpoints | af2040c | closed/partially descoped | descope due to api limits
