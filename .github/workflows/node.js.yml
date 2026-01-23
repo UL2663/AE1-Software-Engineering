@@ -20,7 +20,7 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     defaults:
       run:
-        working-directory: AE1-Software-Engineering/backend
+        working-directory: backend
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
@@ -28,7 +28,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: AE1-Software-Engineering/backend/package-lock.json
+        cache-dependency-path: backend/package-lock.json
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
