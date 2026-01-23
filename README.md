@@ -1,11 +1,13 @@
 [![Node.js CI](https://github.com/UL2663/AE1-Software-Engineering/actions/workflows/node.js.yml/badge.svg)](https://github.com/UL2663/AE1-Software-Engineering/actions/workflows/node.js.yml)
 # Trend-Tracker 🔍📉
 
-A repository for the development of a Trend-Tracker tool. This consists of a hosted application which utilises API calls to retrieve articles about "AI" and "Manufacturing and AI". This data is standardised and then analysed, and returned to the client in a chart.js format. This is rendered into some 'cards' which shows key figures; a pareto graph showing frequency of results over time and a radar ('spiderweb') diagram to review the distribution of topics. This will enable a busy data analysis team to understand key recent themes of AI usage, and as insights mature and the tool develops, allow for the team to stay on top of the most recent technologies and their subsequent impacts and issues. 
+Within a data analytics team in an Operations function of an organisation, the team is challenged to stay on top of incoming trends and developments in technology while also maintaining their large workload. To reduce the amount of time without looking through different news outlets to understand the latest technology, this tool offers a one page overview of statistics surrounding AI in the news.
+
+This repository contains the development of this Trend-Tracker tool. This consists of a hosted application which utilises API calls to retrieve articles about "AI" and "Manufacturing and AI". This data is standardised and then analysed, and returned to the client in a chart.js format. This is rendered into some 'cards' which shows key figures; a pareto graph showing frequency of results over time and a radar ('spiderweb') diagram to review the distribution of topics. This will enable a busy data analysis team to understand key recent themes of AI usage, and as insights mature and the tool develops, allow for the team to stay on top of the most recent technologies and their subsequent impacts and issues. 
 
 ## 📝1.  Project Planning 
 
-For the purposes of this project, I used feature-driven development to reduce the project into small increments. To facilitate this, I concentrated heavily on initial design to ensure all esssential features were accounted for, then articulated these features into tickets for github project planning. When developing the application, I focused on the delivery of one functional feature at a time, prioritising the order of delivery using MoSCoW. 
+For the purposes of this project, I used feature-driven development (FDD) to reduce the project into small increments. To facilitate this, I concentrated heavily on initial design to ensure all essential features were accounted for, then articulated these features into tickets for github project planning. When developing the application, I focused on the delivery of one functional feature at a time, prioritising the order of delivery using MoSCoW. 
 
 <img width="1125" height="596" alt="image" src="https://github.com/user-attachments/assets/a56aef38-1fc7-4136-a152-fbeea588773e" />
 
@@ -17,16 +19,29 @@ For project mapping, I utilised Github Project to plan different project buckets
 
 <img width="1817" height="847" alt="image" src="https://github.com/user-attachments/assets/d239c715-21fb-4d90-be07-ee6e4d75e80d" />
 
-_Buckets used in github project_ 
+_Buckets used in Github project_ 
+
+#### Benefit of FDD and GitHub Projects
+
+Using FDD allowed for adaptation in designed features of the application. 
+Initialy, an additional 'annual' endpoint was included (in issue #13 and #14), but once API response and request restrictions were better understood, these were descoped from the project. This impacted other features, such as the format of the graphs and the type of data on text cards. Because the decision was made to remvoe this from the scope of the project in this feature, no development had been begun on other features, meaning much of the code did not need to be refactored. Github projects enabled deprioritisation by being able to comment justification underneath, as well as editing tickets to strikethrough de-scoped components.
+
+<img width="1818" height="1234" alt="image" src="https://github.com/user-attachments/assets/9f4bd9f5-5953-4c4c-8b90-e06fb38144eb" />
+
+_Ticket #14 for the endpoint of AI and manufacturing, showing strikethrough-effect on daily and annual figures._
+
+Daily figures were also removed due to not enough data being returned by API calls with short date parameters. 
 
 #### Limitations
 
-Although I found github project incredibly useful for tracking requirements and managing process, (especially the time tracker throughout holiday periods so that I could structure my workload, see below), some additional functionality for risk-tracking would have been really useful. 
+Although I found github project incredibly useful for tracking requirements and managing process, (especially the 'Roadmap feature' throughout holiday periods so that I could structure my workload), some additional functionality for risk-tracking would have been beneficial. 
 
-I found the transition to using a more structured documented way of working to take up more time in the first instance than the ways of working I'm used to in my workplace (which is typically dynamic and consists of a lot of excel spreadsheets and word documents). By not formally tracking risks of the project, it felt like progress in building the application was slow-going , as I kept running into problems, changing course, but not considering the impact of adjusting structures on the wider timeline until impacts were being felt. 
-To better and more proactively manage risks before they bnecome problems, more formal time-mapping (such as a WBS) would have been beneficial, as well as a risk-tracker to prompt and evaluate mitigation strategies and processes. 
-    
-### (Dynamic Risk Tracking)
+<img width="977" height="742" alt="image" src="https://github.com/user-attachments/assets/01dccc29-9bcb-4fa8-8ac7-a7527cc134b0" />
+
+_GitHub Roadmap Feature_
+
+By not formally tracking risks of the project, it felt like progress in building the application was slow-going , as I kept running into problems, changing course, but not considering the impact of adjusting structures on the wider timeline until impacts were being felt. 
+To better and more proactively manage risks before they become problems, more formal time-mapping (such as a work breakdown structure) would have been beneficial, as well as a risk-tracker to prompt and evaluate mitigation strategies and processes. Better risk management would also preserve the predictability of Feature Driven Development, wherein features are developed in short and predictable iterations to provide value. 
 
 ## ✏️ 2. Design 
 
@@ -39,7 +54,7 @@ The below image depicts the profile part of this template.
 
 <img width="730" height="482" alt="image" src="https://github.com/user-attachments/assets/58456a84-d3b0-499e-9952-a640330fa3d9" />
 
-_user profile for persona of team lead__
+_User profile for persona of team lead_
 
 I focused the user empathy map on a team-member role, who would be receiving the information in a weekly team meeting. Again, the below image depicts the profile part of this template.
 
@@ -59,6 +74,27 @@ I directly used the outputs of this analysis (especially the post-its) to influe
 <img width="657" height="508" alt="image" src="https://github.com/user-attachments/assets/658ff84b-a72d-46e7-96f2-3676a1e4d1c8" />
     
 _First draft of user requirements_
+
+From the user-experience mapping, I drafted an initial version of functional and user requirements to utilise as features for development. These requirements were mapped into features according to the below traceaility table:
+
+| URS ID | Issue Number | Feature | Branch | Status | Justification |
+|--------|--------------|---------|--------|--------|---------------|
+| F1
+| F2
+| F3
+| F4
+| F5
+| F6
+| F7
+| F8
+| F9
+| F10
+| F11 
+| U1
+| U2
+| U3
+| U4
+| U5
     
 ### Lo-Fi and Hi-Fi Designs 
 
@@ -73,7 +109,6 @@ After developing the low-fi design, I used company colours (purple and yellow) t
 Undraw Icons Viewable in this part of my repository: 
 <img width="319" height="347" alt="image" src="https://github.com/user-attachments/assets/812d1e94-100e-40d3-9c1a-42b3c2e36d7f" />
 
-
 Implementation into Figma: 
  
 <img width="422" height="555" alt="image" src="https://github.com/user-attachments/assets/12ff8260-c9db-4ed1-a037-e49092c70e14" />
@@ -83,6 +118,7 @@ Implementation into Figma:
 From this design, a third row is included to consider annualised trending for AI news, however, due to architectural limitations of the project, this was reduced to two rows of figures. 
     
 ### System Design 
+
 The system design for this application was adjusted multiple times in the development process, which will be discussed in more depth along the narration of the MVP build. The initial system design was used to inform features, which were then translated into tickets. As the system design evolved and reduced over time, this meant that some details of the issues became outdated or not relevant to the final product. 
 
 <img width="701" height="500" alt="image" src="https://github.com/user-attachments/assets/d2306b4d-d986-4d93-9c74-1c00677d0940" />
@@ -99,23 +135,42 @@ _final system diagram_
 
 ## 🗣️ 3. MVP Build Narration
 
- 1. Basic UI navigation functions using CSS and HTML  
- 2. Source API data for feature
- 3. Understand limitations of API data and reconsider system diagram (version 2) 
- 4. Concentrate on hosting requirement
- 5. Refactor away from python server (only previous experience with API's) to express js server
- 6. Understand limitations of hosting platform (render)
- 7. Reconsider system diagram again (version 3)
- 8. Focus on standardisation functions using TDD
- 9. Join the two api data sets together
- 10. Focus on analysis functions using TDD (count and map, graph structures)
- 11. Focus on Chart.JS formatting functions
- 12. Rewrite server response in the following structure:
+ 1. Built basic UI navigation functions using CSS and HTML
+ **2. Source API data for analysis**
+
+The types of api data used were restricted by availability of data under free 'tiers' of various platforms. Ultimately, api's that provided the richest sources of data were the Guardian and GNews. GNews was included to consider articles from a wider variety of sources to reduce the level of bias in the data output. Unfortunately, this is in a ratio of 10:50 for GNews : Guardian, so the output figures are inherently heavily biased toward Guardian news content. 
+
+**3. Understand limitations of API data and reconsider system diagram (version 1)**
+
+One option to overcome this bias was to utilise pagination to retrieve more data from the GNews API. However, this API has a request limit of 100 articles per day. This would mean that if, for example, 10 pages of requests needed to be returned from this api, the website would only able to be loaded 10 times before the API key would become restricted for exceeding limits of the license.
+
+To get around this, the system diagram was redesigned to consider an additional JSON file to act as a temporary database to retrieve data from, limiting the application to one instance of api data fetching, before fetching only from the JSON file, per day. I also considered implementing a database but this was prevented by hosting restrictions on render, and the scope of the application.
+
+**4. Concentrate on hosting requirement**
+
+This consisted of deploying a render service to host a server, which was selected for its appropriate scale for the use of the tool and lack of subscription required. 
+
+ **5. Refactor away from python server (which was my only previous experience with API's) to express js server**
+
+This technical misunderstanding led to the re-creation of the system diagram (version two). 
+ 
+**6.  Understand limitations of hosting platform (render)**
+
+Render facilitates json file hosting as a cache, but only stores volatile JSON files per session. This introduced issues such as concurrency should multiple users use the platform, and meant that trending data over time would not have been possible unless a database was used. 
+The database offering on render is a free subscription service, limited to a one month trial period, which would be ultimately be defunct for trending, although usable for the purpose of a 6-week assignment. As this was surplus to scope, I recreated my system diagram to its final iteration (version three). 
+
+8. Reconsider system diagram again (version 3)
+
+**9. Focus on standardisation functions using TDD**
+ 10. Join the two api data sets together
+ 11. Focus on analysis functions using TDD (count and map, graph structures)
+ 12. Focus on Chart.JS formatting functions
+** 13. Rewrite server response in the following structure:**
      
      fetch --> standardise --> count and map functions --> pareto analysis/radar analysis/card counts --> format outputs for response (focus on correct call order)
 
- 13. Client-side graph rendering using chart.js 
- 14. Deploy and test cycle to apply css formatting
+ 14. Client-side graph rendering using chart.js 
+ 15. Deploy and test cycle to apply css formatting
 
 ## 🚚 4. Testing
 
@@ -132,6 +187,7 @@ While tests were written first and functions written subsequently, this is not c
 <img width="874" height="405" alt="image" src="https://github.com/user-attachments/assets/e7769c8e-8f92-43d9-b369-7403d78c45ed" />
 
 _Example of a commit chain for functions where TDD was used but poorly documented and missing some key points_
+
 
 When I did utilise TDD, I found it really beneficial for bug-fixing. By having the certainty that my functions themselves were passing, issues were typically in the integration of the functions in the server, such as passing in the wrong data types (objects vs arrays), or in one unfortunate case, completely missing a format/count function that was a vital step in the process. 
 
@@ -150,10 +206,11 @@ _Closing comments by each interviewee_
 _Output of user survey_
 
 From the user survey, the application scored particularly well in performance, but scored underwhelmingly in both accessibility categories. Feedback indicates that one of the main ways to improve this would be to better label charts, as well as ensure consistency in chart heights and categories. Comments agree that the project is structured well enough to be developed into a usable programme, but is not yet developed enough for its intended use. 
+For a better understanding of accessibility requirements and design adjustments (such as graphs), it would have been beneficial to conduct some prior in-person requirement elicitation, where feedback could have been applied to the figma drawings and modified before development.
 
 ### Accessibility Review using lighthouse 🚨
 
-### Unit Testing 🚨
+### Unit Testing 
 
 ## 🔨 5. CI/CD 
 
@@ -165,7 +222,6 @@ However, once I had included this line of code, the action provided a platform t
 **what I would do differently:**
 
 This should have been implemented as soon as I started doing test driven development. This would have enabled much faster troubleshooting with integration in github, as well as providing a clearer timeline of development (describing red - green - refactor with more accuracy). 
-
 
 ## 👤 6. User Documentation 
 
