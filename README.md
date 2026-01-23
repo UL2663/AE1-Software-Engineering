@@ -138,12 +138,18 @@ When I did utilise TDD, I found it really beneficial for bug-fixing. By having t
 ### User Acceptance Testing 
 To test the user requirements of my solution, I built a small survey where respondents were asked to rate how much they agreed with a statement on a scale of 1 - 10.
 I collected initials and role information to depict testing across a wider range of user types. 
-These results were averaged and communally discussed, with closing comments attached to the box. The format of this feedback gathering was in a working time sesison.
+These results were averaged and communally discussed, with closing comments attached to the box. The format of this feedback-gathering was in a working session over teams. 
 
+<img width="785" height="759" alt="image" src="https://github.com/user-attachments/assets/1066d2e6-3597-4ea1-834d-5ca98dde4795" />
+_Numerical results, mean and median average of scoring_
+
+<img width="492" height="947" alt="image" src="https://github.com/user-attachments/assets/8246f227-84d1-4236-ac3d-dd2fb74234f7" />
+
+_Closing comments by each interviewee_ 
 
 _Output of user survey_
 
-From the user survey, this went well, this needs to be improved. 
+From the user survey, the application scored particularly well in performance, but scored underwhelmingly in both accessibility categories. Feedback indicates that one of the main ways to improve this would be to better label charts, as well as ensure consistency in chart heights and categories. Comments agree that the project is structured well enough to be developed into a usable programme, but is not yet developed enough for its intended use. 
 
 ### Accessibility Review using lighthouse 🚨
 
@@ -234,6 +240,6 @@ Test driven development, where used, was useful for building dependent functions
 
 Standard Software Development practices were not followed in there being multiple branches per ticket - which was mostly due to my unfamiliarity with github.
 
-Overall, the project represents a concerted attempt at fulfilling the proposal, and has produced a functioniung framework with several opportunities for expansion, by implementing stronger pagination for the api's in use and potentially standardising data from other free-to-use API's. On top of this, implementing file caching would improve performance and follow standard architecture for a type of solution like this. One of the key oppotunities for improvement in the product is establishing a database, so that processed API data could be stored and trended over time. This could produce really powerful outputs for the team to understand, and potentially reduce the risk of too many api-calls being activated if many users use the app. 
+Overall, the project represents a concerted attempt at fulfilling the proposal, and has produced a functioniung framework with several opportunities for expansion. Some of these opportunities include implementing stronger pagination for the api's in use and potentially standardising data from other free-to-use API's. On top of this, implementing file caching would improve performance and follow standard architecture for a type of solution like this. One of the key oppotunities for improvement in the product is establishing a database, so that processed API data could be stored and trended over time. This could produce really powerful outputs for the team to understand, and potentially reduce the risk of too many api-calls being activated if many users use the app. 
 
-Along these lines, coding 'fail-safes' (accounting for errors) are limited in my functions, increasing the likelihood for broken code in future, for example if the API output format changes without notice or the API-key expires. 
+Along these lines, coding 'fail-safes' (accounting for errors) are limited in my functions, increasing the likelihood for broken code in future, for example if the API output format changes without notice or the API-key expires. On demonstrating the application, the page started 'jittering', so there is likely a browser compatibility error or non-responsive styling element that is causing the stability of the app to be thrown. 
