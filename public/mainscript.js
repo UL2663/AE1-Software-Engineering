@@ -58,6 +58,12 @@ function drawPareto(chartData, id) {
   return new Chart(element, {
     data: chartData,
     options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Pareto of amount of responses by date, in descending order'
+            }},
+
       responsive: true,
       interaction:{ mode: "index", intersect: false },
       scales: {
@@ -87,7 +93,12 @@ function drawRadar(chartData, id) {
     type: "radar",
     data: chartData,
     options: {
-      responsive:true
+      responsive:true,
+      plugins: {
+          title: {
+              display: true,
+              text: 'Radar of number of tokens identified by theme'
+            }},
       }
     })}
 
