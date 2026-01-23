@@ -7,24 +7,24 @@ This repository contains the development of this Trend-Tracker tool. This consis
 
 ## 📝1.  Project Planning 
 
-For the purposes of this project, I used feature-driven development (FDD) to reduce the project into small increments. To facilitate this, I concentrated heavily on initial design to ensure all essential features were accounted for, then articulated these features into tickets for github project planning. When developing the application, I focused on the delivery of one functional feature at a time, prioritising the order of delivery using MoSCoW. 
+For the purposes of this project, I used feature-driven development (FDD) to reduce the project into small increments. To facilitate this, I concentrated heavily on initial design to ensure all essential features were accounted for, then articulated these features into tickets for GitHub project planning. When developing the application, I focused on the delivery of one functional feature at a time, prioritising the order of delivery using MoSCoW. 
 
 <img width="1125" height="596" alt="image" src="https://github.com/user-attachments/assets/a56aef38-1fc7-4136-a152-fbeea588773e" />
 
 _Project process flow_ 
 
-### Github Project  
+### GitHub Project  
 
-For project mapping, I utilised Github Project to plan different project buckets.     
+For project mapping, I utilised GitHub Project to plan different project buckets.     
 
 <img width="1817" height="847" alt="image" src="https://github.com/user-attachments/assets/d239c715-21fb-4d90-be07-ee6e4d75e80d" />
 
-_Buckets used in Github project_ 
+_Buckets used in GitHub project_ 
 
 #### Benefit of FDD and GitHub Projects
 
 Using FDD allowed for adaptation in designed features of the application. 
-Initialy, an additional 'annual' endpoint was included (in issue #13 and #14), but once API response and request restrictions were better understood, these were descoped from the project. This impacted other features, such as the format of the graphs and the type of data on text cards. Because the decision was made to remvoe this from the scope of the project in this feature, no development had been begun on other features, meaning much of the code did not need to be refactored. Github projects enabled deprioritisation by being able to comment justification underneath, as well as editing tickets to strikethrough de-scoped components.
+Initially, an additional 'annual' endpoint was included (in issue #13 and #14), but once API response and request restrictions were better understood, these were descoped from the project. This impacted other features, such as the format of the graphs and the type of data on text cards. Because the decision was made to remove this from the scope of the project in this feature, no development had been begun on other features, meaning much of the code did not need to be refactored. GitHub projects enabled deprioritisation by being able to comment justification underneath, as well as editing tickets to strikethrough de-scoped components.
 
 <img width="1818" height="1234" alt="image" src="https://github.com/user-attachments/assets/9f4bd9f5-5953-4c4c-8b90-e06fb38144eb" />
 
@@ -34,7 +34,7 @@ Daily figures were also removed due to not enough data being returned by API cal
 
 #### Limitations
 
-Although I found github project incredibly useful for tracking requirements and managing process, (especially the 'Roadmap feature' throughout holiday periods so that I could structure my workload), some additional functionality for risk-tracking would have been beneficial. 
+Although I found GitHub project incredibly useful for tracking requirements and managing process, (especially the 'Roadmap feature' throughout holiday periods so that I could structure my workload), some additional functionality for risk-tracking would have been beneficial. 
 
 <img width="977" height="742" alt="image" src="https://github.com/user-attachments/assets/01dccc29-9bcb-4fa8-8ac7-a7527cc134b0" />
 
@@ -75,26 +75,22 @@ I directly used the outputs of this analysis (especially the post-its) to influe
     
 _First draft of user requirements_
 
-From the user-experience mapping, I drafted an initial version of functional and user requirements to utilise as features for development. These requirements were mapped into features according to the below traceaility table:
+From the user-experience mapping, I drafted an initial version of functional and user requirements to utilise as features for development.Most of these requirements were mapped into features according to the below traceability table:
 
-| URS ID | Issue Number | Feature | Branch | Status | Justification |
+| URS ID | Issue Number | Feature | Pull Req | Status | Justification |
 |--------|--------------|---------|--------|--------|---------------|
-| F1
-| F2
-| F3
-| F4
-| F5
-| F6
-| F7
-| F8
-| F9
-| F10
-| F11 
-| U1
-| U2
-| U3
-| U4
-| U5
+| F1 | #4 |        Graphs and figures   | 39ddc7d | Closed | Sbility to interrogate api data              
+| F2 | #5 |         Navigation buttons  | 11815c8 | Closed | Interaction and generate command
+| F3 | #6 |        Text Cards           | Card functions d336783 | Closed | Easier interpretation for some audiences
+| F4 | #13 |       Man AI endpoints | af2040c | closed/partially descoped | descope due to api limits
+| F5 | #14 |       AI Endpoints | af2040c | Closed/partially descoped | descope due to api limits
+| F8 | #8 |        Mobile/Desktop  | N/a  |  Descoped | Deprioritised due to time
+| F9 | #15 |       Accessible online (hosting) | 76171d5 | Closed | assignment requirement/Accessibility               
+| U1 | #9 |        Intuitive | N/A | Closed | ease of use 
+| U2 | #10 |       Technical/Non-Technical | N/A | Closed | Widen audience
+| U3 | #11 |       Accessible |N/A | Closed | Widen Audience
+| U4 | #12 |       Performance | N/A| Closed | Poor performance would be inconvenient for user
+| U5 | #2  |       Design principles | bbe4efa | Closed | Better visual ingestion of information
     
 ### Lo-Fi and Hi-Fi Designs 
 
@@ -161,7 +157,7 @@ The database offering on render is a free subscription service, limited to a one
 
 8. Reconsider system diagram again (version 3)
 
-**9. Focus on standardisation functions using TDD**
+9. Focus on standardisation functions using TDD
  10. Join the two api data sets together
  11. Focus on analysis functions using TDD (count and map, graph structures)
  12. Focus on Chart.JS formatting functions
@@ -176,7 +172,7 @@ The database offering on render is a free subscription service, limited to a one
 
 ### Test-Driven Development 
 
-Where appropriate, I utilised test-driven develoment (TDD), specifically for standardise functions, formatting functions and analysis functions.
+Where appropriate, I utilised test-driven development (TDD), specifically for standardise functions, formatting functions and analysis functions.
 
 I wrote tests first, committed them to the branch and then wrote the corresponding functions. 
 Some functions did not require much refactoring because they were relatively basic, but for analysis functions, such as the pareto function, outputs and input data required a lot of reworking. 
@@ -188,8 +184,30 @@ While tests were written first and functions written subsequently, this is not c
 
 _Example of a commit chain for functions where TDD was used but poorly documented and missing some key points_
 
-
 When I did utilise TDD, I found it really beneficial for bug-fixing. By having the certainty that my functions themselves were passing, issues were typically in the integration of the functions in the server, such as passing in the wrong data types (objects vs arrays), or in one unfortunate case, completely missing a format/count function that was a vital step in the process. 
+
+Further evidence of Test-Driven-Development can be seen in the standardiseTitle function: 
+
+1. Write Test
+
+<img width="1276" height="841" alt="image" src="https://github.com/user-attachments/assets/bb2fb1b7-4711-47ab-ab87-7aba3be70ea4" />
+
+_Initial tests written_
+
+2. Red Outputs
+
+<img width="758" height="1236" alt="image" src="https://github.com/user-attachments/assets/0445d0cb-af45-4d50-9339-ef2d31148003" />
+
+  _Failing functions_
+
+<img width="802" height="1136" alt="image" src="https://github.com/user-attachments/assets/72781e12-f35a-48e4-bf25-b2442748e3e8" />
+
+_Second Failed attempt_ 
+
+
+4. Green Output
+
+<img width="628" height="240" alt="image" src="https://github.com/user-attachments/assets/8c1ca3da-f4c2-4d33-b7b6-00a50db2c045" />
 
 ### User Acceptance Testing 
 To test the user requirements of my solution, I built a small survey where respondents were asked to rate how much they agreed with a statement on a scale of 1 - 10.
@@ -197,20 +215,37 @@ I collected initials and role information to depict testing across a wider range
 These results were averaged and communally discussed, with closing comments attached to the box. The format of this feedback-gathering was in a working session over teams. 
 
 <img width="785" height="759" alt="image" src="https://github.com/user-attachments/assets/1066d2e6-3597-4ea1-834d-5ca98dde4795" />
+
 _Numerical results, mean and median average of scoring_
 
 <img width="492" height="947" alt="image" src="https://github.com/user-attachments/assets/8246f227-84d1-4236-ac3d-dd2fb74234f7" />
 
 _Closing comments by each interviewee_ 
 
-_Output of user survey_
+#### Output of user survey:
 
-From the user survey, the application scored particularly well in performance, but scored underwhelmingly in both accessibility categories. Feedback indicates that one of the main ways to improve this would be to better label charts, as well as ensure consistency in chart heights and categories. Comments agree that the project is structured well enough to be developed into a usable programme, but is not yet developed enough for its intended use. 
+From the user survey, the application scored particularly well in performance, but scored underwhelmingly in both accessibility categories. Feedback indicates that one of the main ways to improve this would be to better label charts, as well as ensure consistency in chart heights and categories. Comments agree that the project is structured well enough to be developed into a usable programme, but is not yet developed enough for its intended use. Additional commentary would also be useful surrounding how the data is collected and what it is displaying. 
 For a better understanding of accessibility requirements and design adjustments (such as graphs), it would have been beneficial to conduct some prior in-person requirement elicitation, where feedback could have been applied to the figma drawings and modified before development.
 
 ### Accessibility Review using lighthouse 🚨
 
-### Unit Testing 
+<img width="1097" height="1040" alt="image" src="https://github.com/user-attachments/assets/65c91f07-0e06-40bc-a0e9-4f9175fb99d0" />
+
+_result of lighthouse report_ 
+
+Lighthouse content loading scored the page well on performance and best practices, but scored accessibility for navigation 79/100. 
+
+<img width="1148" height="652" alt="image" src="https://github.com/user-attachments/assets/e3e06786-5e58-4841-a576-e8625cd90af6" />
+
+_Accessibility score feedback from lighthouse report_
+
+Some of the feedback from this is buttons not having accessible names, which is not as applicable, as the buttons are images which use cursor changes and css transitions to indicate that they are able to be interacted with. Additional text in the 'explore' sections and changing the alt text of the buttons did not improve this score.
+
+Feedback from a lighthouse report of a snapshot of the generated charts responded with the same feedback. 
+
+<img width="2472" height="1258" alt="image" src="https://github.com/user-attachments/assets/af137763-e16a-4704-9ff0-84097651baab" />
+
+_Snapshot Accessibility sore_ 
 
 ## 🔨 5. CI/CD 
 
@@ -221,12 +256,14 @@ However, once I had included this line of code, the action provided a platform t
 
 **what I would do differently:**
 
-This should have been implemented as soon as I started doing test driven development. This would have enabled much faster troubleshooting with integration in github, as well as providing a clearer timeline of development (describing red - green - refactor with more accuracy). 
+This should have been implemented as soon as I started doing test driven development. This would have enabled much faster troubleshooting with integration in GitHub, as well as providing a clearer timeline of development (describing red - green - refactor with more accuracy). 
 
 ## 👤 6. User Documentation 
 
+To access the web-app, visit: https://trend-tracker-uggu.onrender.com/
+
 The application contains the following interactive features:
-- 
+
 - An 'Explore AI and Manufacturing' button and an 'Explore AI' button
 - Graphs that can be hovered over
 
@@ -250,6 +287,8 @@ Figures will appear corresponding to the data point your cursor is hovering over
 
 ## 🛠️ 7. Technical Documentation  >
 
+Render address: https://trend-tracker-uggu.onrender.com/
+
 Technical Requirements: 
 
  - Server hosting platform 
@@ -268,19 +307,66 @@ Critical Node Packages:
 
 To run the application: 
 
+Either access through https://trend-tracker-uggu.onrender.com/ OR: 
+
  - ensure Node and NPM is installed
  - Clone this repository
  - Make sure you're in the **backend** directory 
  - Run unit tests using npm test
  - start the server using npm start
 
-Directory structure:
+Annotated Directory Structure and Functions in files :
+
+<img width="662" height="475" alt="image" src="https://github.com/user-attachments/assets/ec8ef1eb-c794-4dc7-940c-9b21af4e697e" />
+_Annotation of file directory_
+
+<img width="287" height="227" alt="image" src="https://github.com/user-attachments/assets/ab8c718b-a469-4954-af10-7f4165d2fbdf" />
+_Utils File Structure_ 
+
+Standardise contains all functions required to standardise API outputs into the same format, so that they can be analysed (ie. name, publishedAt). 
+
+<img width="1321" height="981" alt="image" src="https://github.com/user-attachments/assets/505d0840-e416-48ca-a196-4b7100bb7d8e" />
+
+_Standardise Functions_
+
+Analyse contains: 
+ Tokenisation 
+ Counting of tokens 
+ Removing of Stopwords
+ Mapping of Data to dates 
+ Radar and Pareto functions 
+ Selecting the Top token by count
+
+Format contains: 
+ formatting pareto values to chart.js compatible json  
+ formatting radar values to chart.js compatible json 
+ formatting count values to a small returned array of {token, count}
+  
+Preparation for analysis from both data calls (two calls per API, Weekly and Monthly date ranges): 
+Weekly
+-> API data retrieved from GN -> Standardised titles -> standardise Dates -> tokenize -> JOIN 
+-> API data retrieved from Guardian ->  standardise titles -> tokenize -> JOIN
+
+For Radar analysis: 
+Joined data -> CountTokens (counts occurance of each token for all tokens)
+-> RadarFunct (maps all tokens to categories, adding up a cumulative amount per category)
+-> format_Radar (returns ChartJS-ready JSON) 
+
+For Pareto Analysis: 
+Joined data -> MapDates (maps the amount of articles to the published date) 
+-> ParetoFunct (counts the cumulative percentage by each date count) 
+-> format_Pareto (returns ChartJS ready pareto
 
 Render Server: 
-API-key secrets 
-Technical limitations 
+API-key secrets stored here
+_Limitations_ 
+- Spin Down after 15 minutes of inactivity means slight delay in load
+- 750 Shared Hours of use per month
+- PostgreSQL service availaable only for 30 days free 
 
-API Limitations: 
+API Technical Limitations: 
+GNews: 10 responses per request, 100 requests per day
+Guardian: 50 responses per request, 1 request per second, 500 requests per day
 
 
 ## 📑 8. Evaluation 
@@ -289,13 +375,13 @@ The project fulfills the critical requirements for the Trend Tracker as set out 
 
 Some key areas to improve include earlier implementation of CI/CD pipelines - these were incredibly useful once they were implemented, which was at a very late stage in the project. 
 
-System design was heavily restricted by API-specific vendor restrictions. The extent of this restriction prompted a lot of work-around ideating, which ultimately took more time away from actual deevelopment and led to out-of-scope requirements being added and subsequently removed/
+System design was heavily restricted by API-specific vendor restrictions. The extent of this restriction prompted a lot of work-around ideating, which ultimately took more time away from actual development and led to out-of-scope requirements being added and subsequently removed/
 Better risk tracking of this would have been incredibly useful here, so that I could have had a more value-add approach to testing. 
 
 Test driven development, where used, was useful for building dependent functions but poorly documented.
 
-Standard Software Development practices were not followed in there being multiple branches per ticket - which was mostly due to my unfamiliarity with github.
+Standard Software Development practices were not followed in there being multiple branches per ticket - which was mostly due to my unfamiliarity with GitHub.
 
-Overall, the project represents a concerted attempt at fulfilling the proposal, and has produced a functioniung framework with several opportunities for expansion. Some of these opportunities include implementing stronger pagination for the api's in use and potentially standardising data from other free-to-use API's. On top of this, implementing file caching would improve performance and follow standard architecture for a type of solution like this. One of the key oppotunities for improvement in the product is establishing a database, so that processed API data could be stored and trended over time. This could produce really powerful outputs for the team to understand, and potentially reduce the risk of too many api-calls being activated if many users use the app. 
+Overall, the project represents a concerted attempt at fulfilling the proposal, and has produced a functioniung framework with several opportunities for expansion. Some of these opportunities include implementing stronger pagination for the api's in use and potentially standardising data from other free-to-use API's. On top of this, implementing file caching would improve performance and follow standard architecture for a type of solution like this. One of the key opportunities for improvement in the product is establishing a database, so that processed API data could be stored and trended over time. This could produce really powerful outputs for the team to understand, and potentially reduce the risk of too many api-calls being activated if many users use the app. 
 
 Along these lines, coding 'fail-safes' (accounting for errors) are limited in my functions, increasing the likelihood for broken code in future, for example if the API output format changes without notice or the API-key expires. On demonstrating the application, the page started 'jittering', so there is likely a browser compatibility error or non-responsive styling element that is causing the stability of the app to be thrown. 
