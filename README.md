@@ -70,14 +70,16 @@ After developing the low-fi design, I used company colours (purple and yellow) t
 From this design, a third row is included to consider annualised trending for AI news, however, due to architectural limitations of the project, this was reduced to two rows of figures. 
     
 ### System Design 
-The system design for this application was adjusted multiple times in the development process, which will be discussed in more depth along the narration of the MVP build.
-        <img width="701" height="500" alt="image" src="https://github.com/user-attachments/assets/d2306b4d-d986-4d93-9c74-1c00677d0940" />
-         _first system diagram iteration one_
+The system design for this application was adjusted multiple times in the development process, which will be discussed in more depth along the narration of the MVP build. The initial system design was used to inform features, which were then translated into tickets. As the system design evolved and reduced over time, this meant that some details of the issues became outdated or not relevant to the final product. 
+
+<img width="701" height="500" alt="image" src="https://github.com/user-attachments/assets/d2306b4d-d986-4d93-9c74-1c00677d0940" />
+_first system diagram iteration one_
     
-        <img width="582" height="401" alt="image" src="https://github.com/user-attachments/assets/58fa2cf5-3426-4dae-9af6-8319d951dc1f" />
-         _functional system diagram iteration two_
-         
-         _final system diagram_    
+<img width="582" height="401" alt="image" src="https://github.com/user-attachments/assets/58fa2cf5-3426-4dae-9af6-8319d951dc1f" />
+_functional system diagram iteration two_
+
+<img width="845" height="809" alt="image" src="https://github.com/user-attachments/assets/4fe511e2-d382-470f-a799-64ebd2022e20" />
+_final system diagram_    
 
 
 ## 🗣️ 3. MVP Build Narration
