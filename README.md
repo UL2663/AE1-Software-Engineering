@@ -1,6 +1,9 @@
 [![Node.js CI](https://github.com/UL2663/AE1-Software-Engineering/actions/workflows/node.js.yml/badge.svg)](https://github.com/UL2663/AE1-Software-Engineering/actions/workflows/node.js.yml)
 # Trend-Tracker 🔍📉
 
+https://trend-tracker-uggu.onrender.com/
+-
+
 Within a data analytics team in an Operations function of an organisation, the team is challenged to stay on top of incoming trends and developments in technology while also maintaining their large workload. To reduce the amount of time without looking through different news outlets to understand the latest technology, this tool offers a one page overview of statistics surrounding AI in the news.
 
 This repository contains the development of this Trend-Tracker tool. This consists of a hosted application which utilises API calls to retrieve articles about "AI" and "Manufacturing and AI". This data is standardised and then analysed, and returned to the client in a chart.js format. This is rendered into some 'cards' which shows key figures; a pareto graph showing frequency of results over time and a radar ('spiderweb') diagram to review the distribution of topics. This will enable a busy data analysis team to understand key recent themes of AI usage, and as insights mature and the tool develops, allow for the team to stay on top of the most recent technologies and their subsequent impacts and issues. 
