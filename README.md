@@ -18,6 +18,13 @@ For project mapping, I utilised Github Project to plan different project buckets
 <img width="1817" height="847" alt="image" src="https://github.com/user-attachments/assets/d239c715-21fb-4d90-be07-ee6e4d75e80d" />
 
 _Buckets used in github project_ 
+
+#### Limitations
+
+Although I found github project incredibly useful for tracking requirements and managing process, (especially the time tracker throughout holiday periods so that I could structure my workload, see below), some additional functionality for risk-tracking would have been really useful. 
+
+I found the transition to using a more structured documented way of working to take up more time in the first instance than the ways of working I'm used to in my workplace (which is typically dynamic and consists of a lot of excel spreadsheets and word documents). By not formally tracking risks of the project, it felt like progress in building the application was slow-going , as I kept running into problems, changing course, but not considering the impact of adjusting structures on the wider timeline until impacts were being felt. 
+To better and more proactively manage risks before they bnecome problems, more formal time-mapping (such as a WBS) would have been beneficial, as well as a risk-tracker to prompt and evaluate mitigation strategies and processes. 
     
 ### (Dynamic Risk Tracking)
 
@@ -112,10 +119,18 @@ _final system diagram_
 // do today // 
 
 ### Accessibility Review using lighthouse 🚨
-    
+
+
 
 ## 🔨 5. CI/CD  >
-    
+
+### Node CI process setup. 
+To setup a node CI action, I had to change the path for the working directory to point to my /backend file, where my package-lock.json file is held. 
+Because I hadn't also redirected the cache to this directory, for the first few days of using actions, all build files failed and it looks like mthe project was very broken.
+However, once I had included this line of code, the action provided a platform to run end-to-end pushes and testing, and provided better visual management of the status of my project (with badges and ticks/crosses when something faile ). 
+
+**what I would do differently: **
+This should have been implemented as soon as I strated doing test driven development. This would have enabled much faster troubleshooting with integration in github, as well as providing a clearer timeline of development (describing red - green - refactor with more accuracy). 
 
 ## 👤 6. User Documentation  >
     
