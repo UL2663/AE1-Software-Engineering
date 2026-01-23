@@ -203,11 +203,17 @@ To run the application:
  - ensure Node and NPM is installed
  - Clone this repository
  - Make sure you're in the **backend** directory 
- - Run unit tests usigng npm test
+ - Run unit tests using npm test
  - start the server using npm start
 
 ## 📑 8. Evaluation  >
 
-The project fullfils the critical requirements for the Trend Tracker as set out in the system design, but has much potential for improvement and richer metrics with some simple additions 
+The project fulfills the critical requirements for the Trend Tracker as set out in the system design, but has much potential for improvement and richer metrics with some simple additions.
 
+Some key areas to improve include earlier implementation of CI/CD pipelines - these were incredibly useful once they were implemented, which was at a very late stage in the project. 
+
+System design was heavily restricted by API-specific vendor restrictions. The extent of this restriction prompted a lot of work-around ideating, which ultimately took more time away from actual deevelopment and led to out-of-scope requirements being added and subsequently removed/
+Better risk tracking of this would have been incredibly useful here, so that I could have had a more value-add approach to testing. 
+
+Test driven development, where used, was useful but poorly documented. 
 
