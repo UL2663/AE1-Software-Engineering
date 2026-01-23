@@ -68,8 +68,14 @@ Once I had a clearer understanding of the basic requirements for the application
           
 _low fidelity design_
          
-After developing the low-fi design, I used company colours (purple and yellow) to recolour some royalty free imaging to use for button icons in my high-fidelity design of the application.  (ref) 
+After developing the low-fi design, I used company colours (purple and yellow) to recolour some royalty free imaging to use for button icons in my high-fidelity design of the application (undraw). 
 
+Undraw Icons Viewable in this part of my repository: 
+<img width="319" height="347" alt="image" src="https://github.com/user-attachments/assets/812d1e94-100e-40d3-9c1a-42b3c2e36d7f" />
+
+
+Implementation into Figma: 
+ 
 <img width="422" height="555" alt="image" src="https://github.com/user-attachments/assets/12ff8260-c9db-4ed1-a037-e49092c70e14" />
 
  _hi-fidelity design_
