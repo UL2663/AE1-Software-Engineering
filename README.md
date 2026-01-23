@@ -245,7 +245,7 @@ Feedback from a lighthouse report of a snapshot of the generated charts responde
 
 <img width="2472" height="1258" alt="image" src="https://github.com/user-attachments/assets/af137763-e16a-4704-9ff0-84097651baab" />
 
-_Snapshot Accessibility sore_ 
+_Snapshot Accessibility Score_ 
 
 ## 🔨 5. CI/CD 
 
@@ -348,7 +348,7 @@ Weekly
 -> API data retrieved from Guardian ->  standardise titles -> tokenize -> JOIN
 
 For Radar analysis: 
-Joined data -> CountTokens (counts occurance of each token for all tokens)
+Joined data -> CountTokens (counts occurence of each token for all tokens)
 -> RadarFunct (maps all tokens to categories, adding up a cumulative amount per category)
 -> format_Radar (returns ChartJS-ready JSON) 
 
@@ -382,6 +382,7 @@ Test driven development, where used, was useful for building dependent functions
 
 Standard Software Development practices were not followed in there being multiple branches per ticket - which was mostly due to my unfamiliarity with GitHub.
 
-Overall, the project represents a concerted attempt at fulfilling the proposal, and has produced a functioniung framework with several opportunities for expansion. Some of these opportunities include implementing stronger pagination for the api's in use and potentially standardising data from other free-to-use API's. On top of this, implementing file caching would improve performance and follow standard architecture for a type of solution like this. One of the key opportunities for improvement in the product is establishing a database, so that processed API data could be stored and trended over time. This could produce really powerful outputs for the team to understand, and potentially reduce the risk of too many api-calls being activated if many users use the app. 
+Overall, the project represents a concerted attempt at fulfilling the proposal, and has produced a functioning framework with several opportunities for expansion. Some of these opportunities include implementing stronger pagination for the api's in use and potentially standardising data from other free-to-use API's. On top of this, implementing file caching would improve performance and follow standard architecture for a type of solution like this. One of the key opportunities for improvement in the product is establishing a database, so that processed API data could be stored and trended over time. This could produce really powerful outputs for the team to understand, and potentially reduce the risk of too many api-calls being activated if many users use the app, by retrieving data from the database if API data for that day already exists. 
 
-Along these lines, coding 'fail-safes' (accounting for errors) are limited in my functions, increasing the likelihood for broken code in future, for example if the API output format changes without notice or the API-key expires. On demonstrating the application, the page started 'jittering', so there is likely a browser compatibility error or non-responsive styling element that is causing the stability of the app to be thrown. 
+Along these lines, coding 'fail-safes' (accounting for errors) are limited in my functions, increasing the likelihood for broken code in future, for example if the API output format changes without notice or the API-key expires. On demonstrating the application, the page started 'jittering', so there is likely a browser compatibility error or non-responsive styling element that is causing the stability of the app to be thrown. In future, stronger planning, such as time boxing feature-development, clearer implementation of TDD and earlier use of CI (GitHub Actions) would have enabled a stronger end product. 
+With time constraints, a smaller-scoped product may have been more sensible to ensure the full brief was completed with opportunity for improvement after the first prototype was developed. 
