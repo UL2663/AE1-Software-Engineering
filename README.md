@@ -50,7 +50,7 @@ To better and more proactively manage risks before they become problems, more fo
 
 ## Persona & Empathy Map 
 
-These were both produced using figma templates, available at: https://www.figma.com/design/sBNGu3owQIOwrZ0DVliv8Z/Trend-Tracker-Project?node-id=0-1&t=rMATtgCv1oCFxkR7-1
+These were both produced using figma templates. Figma is available publically at: https://www.figma.com/design/sBNGu3owQIOwrZ0DVliv8Z/Trend-Tracker-Project?node-id=0-1&t=rMATtgCv1oCFxkR7-1
          
 I focused the user persona on a team-lead role, who would likely lead a weekly team meeting where a trend tracker would be used/cascaded to encourage discussion.
 The below image depicts the profile part of this template.
