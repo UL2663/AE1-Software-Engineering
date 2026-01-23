@@ -143,7 +143,7 @@ From the user survey, this went well, this needs to be improved.
 
 ### Unit Testing 🚨
 
-## 🔨 5. CI/CD  >
+## 🔨 5. CI/CD 
 
 ### Node CI process setup. 
 To setup a node CI action, I had to change the path for the working directory to point to my /backend file, where my package-lock.json file is held. 
@@ -155,12 +155,59 @@ However, once I had included this line of code, the action provided a platform t
 This should have been implemented as soon as I started doing test driven development. This would have enabled much faster troubleshooting with integration in github, as well as providing a clearer timeline of development (describing red - green - refactor with more accuracy). 
 
 
-## 👤 6. User Documentation  >
+## 👤 6. User Documentation 
+
+The application contains the following interactive features:
+- 
+- An 'Explore AI and Manufacturing' button and an 'Explore AI' button
+- Graphs that can be hovered over
+
+**Clicking the 'Explore' buttons**
+
+The page will scroll down to some charts that are generated. 
+
+**Hovering over graphs**
+Figures will appear corresponding to the data point your cursor is hovering over.
+ 
+1. Select an 'explore button' 
     
+    <img width="625" height="350" alt="image" src="https://github.com/user-attachments/assets/2ebdc1aa-7bec-47bd-a5e3-7ed6923bfcdc" />
+    _Intial load screen_
+    
+2. Explore charts from the past week and past month 
+    
+    <img width="625" height="350" alt="image" src="https://github.com/user-attachments/assets/9b7cffd1-1ff9-4f0d-aae8-a626980544c5" />
+    _Graph screen_
+
 
 ## 🛠️ 7. Technical Documentation  >
-    
+
+Technical Requirements: 
+
+ - Server hosting platform 
+ - Server side processing of data
+ - Client side rendering of graphs 
+
+Critical Node Packages: 
+ 
+ - Express for server responses
+ - Jest for testing  
+ - Chart.js for client side rendering of graphs
+
+(Optional) Dependencies: 
+
+- Nodemon for testing initial server setup
+
+To run the application: 
+
+ - ensure Node and NPM is installed
+ - Clone this repository
+ - Make sure you're in the **backend** directory 
+ - Run unit tests usigng npm test
+ - start the server using npm start
 
 ## 📑 8. Evaluation  >
-    
+
+The project fullfils the critical requirements for the Trend Tracker as set out in the system design, but has much potential for improvement and richer metrics with some simple additions 
+
 
