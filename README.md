@@ -206,7 +206,16 @@ To run the application:
  - Run unit tests using npm test
  - start the server using npm start
 
-## 📑 8. Evaluation  >
+Directory structure:
+
+Render Server: 
+API-key secrets 
+Technical limitations 
+
+API Limitations: 
+
+
+## 📑 8. Evaluation 
 
 The project fulfills the critical requirements for the Trend Tracker as set out in the system design, but has much potential for improvement and richer metrics with some simple additions.
 
@@ -215,5 +224,10 @@ Some key areas to improve include earlier implementation of CI/CD pipelines - th
 System design was heavily restricted by API-specific vendor restrictions. The extent of this restriction prompted a lot of work-around ideating, which ultimately took more time away from actual deevelopment and led to out-of-scope requirements being added and subsequently removed/
 Better risk tracking of this would have been incredibly useful here, so that I could have had a more value-add approach to testing. 
 
-Test driven development, where used, was useful but poorly documented. 
+Test driven development, where used, was useful for building dependent functions but poorly documented.
 
+Standard Software Development practices were not followed in there being multiple branches per ticket - which was mostly due to my unfamiliarity with github.
+
+Overall, the project represents a concerted attempt at fulfilling the proposal, and has produced a functioniung framework with several opportunities for expansion, by implementing stronger pagination for the api's in use and potentially standardising data from other free-to-use API's. On top of this, implementing file caching would improve performance and follow standard architecture for a type of solution like this. One of the key oppotunities for improvement in the product is establishing a database, so that processed API data could be stored and trended over time. This could produce really powerful outputs for the team to understand, and potentially reduce the risk of too many api-calls being activated if many users use the app. 
+
+Along these lines, coding 'fail-safes' (accounting for errors) are limited in my functions, increasing the likelihood for broken code in future, for example if the API output format changes without notice or the API-key expires. 
