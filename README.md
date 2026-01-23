@@ -196,22 +196,24 @@ Further evidence of Test-Driven-Development can be seen in the standardiseTitle 
 
 <img width="1276" height="841" alt="image" src="https://github.com/user-attachments/assets/bb2fb1b7-4711-47ab-ab87-7aba3be70ea4" />
 
-_Initial tests written_
+_1. Initial tests written_
 
 2. Red Outputs
 
 <img width="758" height="1236" alt="image" src="https://github.com/user-attachments/assets/0445d0cb-af45-4d50-9339-ef2d31148003" />
 
-  _Failing functions_
+  _2.Failing functions_
 
 <img width="802" height="1136" alt="image" src="https://github.com/user-attachments/assets/72781e12-f35a-48e4-bf25-b2442748e3e8" />
 
-_Second Failed attempt_ 
+_3. Second Failed attempt_ 
 
 
 4. Green Output
 
 <img width="628" height="240" alt="image" src="https://github.com/user-attachments/assets/8c1ca3da-f4c2-4d33-b7b6-00a50db2c045" />
+
+_4. Passing Code_ 
 
 ### User Acceptance Testing 
 To test the user requirements of my solution, I built a small survey where respondents were asked to rate how much they agreed with a statement on a scale of 1 - 10.
@@ -233,13 +235,13 @@ For a better understanding of accessibility requirements and design adjustments 
 
 ### Accessibility Review using lighthouse 🚨
 
-<img width="1097" height="1040" alt="image" src="https://github.com/user-attachments/assets/65c91f07-0e06-40bc-a0e9-4f9175fb99d0" />
+<img width="550" height="520" alt="image" src="https://github.com/user-attachments/assets/65c91f07-0e06-40bc-a0e9-4f9175fb99d0" />
 
 _result of lighthouse report_ 
 
 Lighthouse content loading scored the page well on performance and best practices, but scored accessibility for navigation 79/100. 
 
-<img width="1148" height="652" alt="image" src="https://github.com/user-attachments/assets/e3e06786-5e58-4841-a576-e8625cd90af6" />
+<img width="575" height="325" alt="image" src="https://github.com/user-attachments/assets/e3e06786-5e58-4841-a576-e8625cd90af6" />
 
 _Accessibility score feedback from lighthouse report_
 
@@ -247,7 +249,7 @@ Some of the feedback from this is buttons not having accessible names, which is 
 
 Feedback from a lighthouse report of a snapshot of the generated charts responded with the same feedback. 
 
-<img width="2472" height="1258" alt="image" src="https://github.com/user-attachments/assets/af137763-e16a-4704-9ff0-84097651baab" />
+<img width="1235" height="630" alt="image" src="https://github.com/user-attachments/assets/af137763-e16a-4704-9ff0-84097651baab" />
 
 _Snapshot Accessibility Score_ 
 
@@ -281,12 +283,14 @@ Figures will appear corresponding to the data point your cursor is hovering over
 1. Select an 'explore button' 
     
     <img width="625" height="350" alt="image" src="https://github.com/user-attachments/assets/2ebdc1aa-7bec-47bd-a5e3-7ed6923bfcdc" />
-    _Intial load screen_
+
+   _Intial load screen_
     
-2. Explore charts from the past week and past month 
+3. Explore charts from the past week and past month 
     
     <img width="625" height="350" alt="image" src="https://github.com/user-attachments/assets/9b7cffd1-1ff9-4f0d-aae8-a626980544c5" />
-    _Graph screen_
+
+   _Graph screen_
 
 
 ## 🛠️ 7. Technical Documentation  >
@@ -322,9 +326,11 @@ Either access through https://trend-tracker-uggu.onrender.com/ OR:
 Annotated Directory Structure and Functions in files :
 
 <img width="662" height="475" alt="image" src="https://github.com/user-attachments/assets/ec8ef1eb-c794-4dc7-940c-9b21af4e697e" />
+
 _Annotation of file directory_
 
 <img width="287" height="227" alt="image" src="https://github.com/user-attachments/assets/ab8c718b-a469-4954-af10-7f4165d2fbdf" />
+
 _Utils File Structure_ 
 
 Standardise contains all functions required to standardise API outputs into the same format, so that they can be analysed (ie. name, publishedAt). 
